@@ -23,9 +23,9 @@
           <div class="photo_wrapper">
             <img src="./img/profile.jpg" alt="" />
           </div>
-          <li><a href="#">EXPERIENCE</a></li>
-          <li><a href="#">SKILLS</a></li>
-          <li><a href="#">PROJECTS</a></li>
+          <li><a href="">EXPERIENCE</a></li>
+          <li><a href="">SKILLS</a></li>
+          <li><a href="">PROJECTS</a></li>
         </ul>
       </sidebar>
       <container class="col-10 p-0">
@@ -71,33 +71,84 @@
               <h2 class="card-title flex-shrink-0">
                 SKILLS
               </h2>
-              <div class="mt-5 d-flex flex-grow-1 flex-column">
+              <div class="mt-5 d-flex flex-grow-1 flex-column pr-5">
                 <div
                   class="w-100 flex-grow-1 d-flex justify-content-around pr-5 align-items-around"
                 >
-                  <div class="chart" data-percent="80">HTML5</div>
-                  <div class="chart" data-percent="30">CSS3</div>
-                  <div class="chart" data-percent="50">jQuery</div>
-                  <div class="chart" data-percent="11">REACT JS</div>
+                  <div class="chart" data-percent="60"><h4>HTML5</h4></div>
+                  <div class="chart" data-percent="40"><h4>CSS3</h4></div>
+                  <div class="chart" data-percent="60"><h4>JAVASCRIPT</h4></div>
+                  <div class="chart" data-percent="40"><h4>jQuery</h4></div>
                 </div>
                 <div
                   class="w-100 flex-grow-1 d-flex justify-content-around pr-5 align-items-around"
                 >
-                  <div class="chart" data-percent="11">My SQL</div>
-                  <div class="chart" data-percent="30">NodeJS</div>
-                  <div class="chart" data-percent="60">PHP</div>
+                  <div class="chart" data-percent="50"><h4>REACT JS</h4></div>
+                  <div class="chart" data-percent="30"><h4>My SQL</h4></div>
+                  <div class="chart" data-percent="40"><h4>NodeJS</h4></div>
+                  <div class="chart" data-percent="30"><h4>PHP</h4></div>
                 </div>
               </div>
             </div>
           </div>
           <div class="card shadow" id="projects">
-            <div class="card-body">
-              <h5 class="card-title">PROJECTS</h5>
-              <p class="card-text">
-                Some quick example text to build on the card title and make up
-                the bulk of the card's content.
-              </p>
-              <a href="#" class="btn btn-primary">Go somewhere</a>
+            <div class="card-body d-flex w-100 pb-0">
+              <h2 class="card-title flex-shrink-0">PROJECTS</h2>
+              <div
+                class="projectWrapper flex-grow-1 d-flex justify-content-around"
+              >
+                <div class="card" style="width: 18rem; height: 22rem;">
+                  <img
+                    src="./img/享烘homePage.jpg"
+                    class="card-img-top"
+                    alt="..."
+                  />
+                  <img
+                    src="./img/享烘order.jpg"
+                    class="card-img-top"
+                    alt="..."
+                  />
+                  <img
+                    src="./img/享烘small cart.jpg"
+                    class="card-img-top"
+                    alt="..."
+                  />
+                  <div class="card-body">
+                    <h5 class="card-title">小組專題: 享烘</h5>
+                    <p
+                      class="card-text"
+                      style="font-size: 14px;font-weight: bold;"
+                    >
+                      主要負責購物小車、購物車、訂單，前端/後端/切版
+                    </p>
+                    <p class="card-text" style="font-size: 14px;">
+                      使用技術: html-css-javascript-react-nodeJs-mySQL
+                    </p>
+                    <a
+                      href="https://github.com/troy0606/handmadeTeam"
+                      class="btn btn-warning"
+                      >GitHub Link</a
+                    >
+                  </div>
+                </div>
+                <div class="card" style="width: 18rem; height: 22rem;">
+                  <img src="..." class="card-img-top" alt="..." />
+                  <div class="card-body">
+                    <h5 class="card-title">協作專題: Baking_Shop(開發中</h5>
+                    <p class="card-text" style="font-size: 14px;">
+                      主要負責會員、會員中心，前端/後端/切版
+                    </p>
+                    <p class="card-text" style="font-size: 14px;">
+                      使用技術: html-css-javascript-react-redux-nodeJs-mySQL
+                    </p>
+                    <a
+                      href="https://github.com/troy0606/baking"
+                      class="btn btn-warning"
+                      >GitHub Link</a
+                    >
+                  </div>
+                </div>
+              </div>
             </div>
           </div>
         </center>
@@ -134,10 +185,9 @@
         );
       });
       $(".chart").easyPieChart({
-        scaleColor: "#ecf0f1",
         lineWidth: 10,
         lineCap: "butt",
-        barColor: "#1abc9c",
+        barColor: "#f0cf85",
         trackColor: "#ecf0f1",
         size: 160,
         animate: 1000
