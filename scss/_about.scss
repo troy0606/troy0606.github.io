@@ -1,0 +1,26 @@
+.about {
+  padding-top: 4rem;
+
+  &_bio-image {
+    height: 50vh;
+    width: 100%;
+    background: linear-gradient(
+        to right,
+        rgba($primary-color, 0.9),
+        rgba($primary-color, 0.3)
+      ),
+      url("../img/profile.jpg") center top;
+    background-size: cover;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-end;
+
+    .text-secondary{
+        
+    }
+  }
+  &_bio > p {
+    line-height: 16px;
+  }
+}
