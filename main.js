@@ -70,13 +70,18 @@ function checkWidth() {
   <br />
   &emsp;&emsp;在資策會訓練的過程中，了解將概念實作的困難...
 `);
+  let paragraphLightBox = $("<a></a>")
+    .text(`了解更多`)
+    .addClass("about_bio-lightBox");
   if (windowSize > 800) {
+    $(".about_bio-lightBox").css("display", "none");
     bio.find("p:last").css("display", "none");
     bio.find("p:first").css("display", "flex");
   } else {
     bio.find("p:first").css("display", "none");
+    $(".about_bio-lightBox").css("display", "block");
     if ($(".about_bio p").length === 1) {
-      bio.append(paragraphContent);
+      bio.append(paragraphContent, paragraphLightBox);
     } else {
       bio.find("p:last").css("display", "flex");
     }
