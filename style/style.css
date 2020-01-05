@@ -248,6 +248,18 @@
   background-size: cover;
 }
 
+@media (min-width: 768px) and (max-width: 1023px) {
+  .about_bio-lightBox {
+    font-size: 14px;
+  }
+}
+
+@media (min-width: 480px) and (max-width: 765px) {
+  .about_bio-lightBox {
+    font-size: 12px;
+  }
+}
+
 .about_bio-lightBox {
   margin-top: 20px;
   text-decoration: none;
@@ -298,6 +310,46 @@
   .about_bio-exp > div h6 {
     font-size: 12px;
   }
+}
+
+.about_bio-hide {
+  position: fixed;
+  top: -100%;
+  right: 0%;
+  height: 100%;
+  width: 100%;
+  background: rgba(0, 0, 0, 0.7);
+  opacity: 0;
+  -webkit-transition: all 0.5s ease-in-out;
+  transition: all 0.5s ease-in-out;
+  overflow: hidden;
+}
+
+.about_bio-hide-paragraph {
+  /* 設定內容的樣式及位置(白底區塊) */
+  border-radius: 5px;
+  width: 70%;
+  height: 70%;
+  background: #263f44;
+  margin: 0 auto;
+  position: absolute;
+  padding: 0 8px;
+  top: 40px;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  overflow: scroll;
+  -webkit-transition: all 0.5s ease-in-out;
+  transition: all 0.5s ease-in-out;
+}
+
+.about_bio-hide-paragraph p {
+  margin-top: 20px;
+  font-size: 12px;
+  letter-spacing: 3px;
+  line-height: 16px;
 }
 
 body {

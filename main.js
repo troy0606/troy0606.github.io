@@ -77,6 +77,10 @@ function checkWidth() {
     $(".about_bio-lightBox").css("display", "none");
     bio.find("p:last").css("display", "none");
     bio.find("p:first").css("display", "flex");
+    $(".about_bio-hide").css({
+      opacity: 0,
+      top: "-100%"
+    });
   } else {
     bio.find("p:first").css("display", "none");
     $(".about_bio-lightBox").css("display", "block");
@@ -93,5 +97,16 @@ checkWidth();
 $(window).resize(checkWidth);
 
 $(".about_bio").on("click", ".about_bio-lightBox", () => {
-  console.log("典籍");
+  $(".about_bio-hide").css({
+    opacity: 1,
+    top: "0%"
+  });
+});
+
+$(".about_bio-hide").click(() => {
+  event.stopPropagation();
+  $(".about_bio-hide").css({
+    opacity: 0,
+    top: "-100%"
+  });
 });
