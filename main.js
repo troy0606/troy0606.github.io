@@ -91,3 +91,7 @@ function checkWidth() {
 checkWidth();
 // Bind event listener
 $(window).resize(checkWidth);
+
+$(".about_bio").on("click", ".about_bio-lightBox", () => {
+  console.log("典籍");
+});
