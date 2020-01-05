@@ -13,10 +13,11 @@
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  text-align: center;
-  background: -webkit-gradient(linear, left top, right top, from(rgba(39, 39, 39, 0.9)), to(rgba(39, 39, 39, 0.3))), url("../img/profile.jpg") center top;
-  background: linear-gradient(to right, rgba(39, 39, 39, 0.9), rgba(39, 39, 39, 0.3)), url("../img/profile.jpg") center top;
+  text-align: right;
+  background: -webkit-gradient(linear, left top, right top, from(rgba(38, 63, 68, 0.5)), to(rgba(38, 63, 68, 0.1))), url("/img/2nd date in Japan 👫🌻_200105_0134.jpg") center center;
+  background: linear-gradient(to right, rgba(38, 63, 68, 0.5), rgba(38, 63, 68, 0.1)), url("/img/2nd date in Japan 👫🌻_200105_0134.jpg") center center;
   background-size: cover;
+  background-repeat: no-repeat;
 }
 
 .home_name {
@@ -27,7 +28,7 @@
 }
 
 .home_name--last {
-  color: #ff652f;
+  color: #ffd369;
   font-weight: 700;
 }
 
@@ -123,7 +124,7 @@
           justify-content: center;
   height: 100vh;
   overflow: hidden;
-  background: #272727;
+  background: #263f44;
   list-style: none;
   padding-right: 1rem;
   -webkit-transform: translateY(-100%);
@@ -150,7 +151,7 @@
 }
 
 .nav .menu-nav_item.active > a {
-  color: #ff652f;
+  color: #ffd369;
 }
 
 .nav .menu-nav_link {
@@ -165,7 +166,7 @@
 }
 
 .nav .menu-nav_link:hover {
-  color: #ff652f;
+  color: #ffd369;
 }
 
 .menu-nav_item:nth-child(1) {
@@ -199,15 +200,10 @@
 }
 
 .about {
-  padding-top: 4rem;
-}
-
-.about_bio-image {
-  height: 50vh;
-  width: 100%;
-  background: -webkit-gradient(linear, left top, right top, from(rgba(39, 39, 39, 0.9)), to(rgba(39, 39, 39, 0.3))), url("../img/profile.jpg") center top;
-  background: linear-gradient(to right, rgba(39, 39, 39, 0.9), rgba(39, 39, 39, 0.3)), url("../img/profile.jpg") center top;
-  background-size: cover;
+  padding-top: 2rem;
+  min-height: 100%;
+  width: 80%;
+  margin: 0 auto;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -215,20 +211,83 @@
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  -webkit-box-pack: end;
-      -ms-flex-pack: end;
-          justify-content: flex-end;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
 }
 
-.about_bio > p {
-  line-height: 16px;
+.about .about:first-child {
+  -webkit-box-flex: 1;
+      -ms-flex-positive: 1;
+          flex-grow: 1;
+}
+
+.about_bio p {
+  letter-spacing: 3px;
+  line-height: 20px;
+}
+
+@media (min-width: 768px) and (max-width: 1023px) {
+  .about_bio p {
+    font-size: 14px;
+  }
+}
+
+@media (min-width: 480px) and (max-width: 765px) {
+  .about_bio p {
+    font-size: 12px;
+  }
+}
+
+.about_bio-image {
+  border-radius: 10px;
+  width: 100%;
+  background: -webkit-gradient(linear, right top, left top, from(rgba(1, 86, 104, 0.5)), to(rgba(1, 86, 104, 0.1)));
+  background: linear-gradient(to left, rgba(1, 86, 104, 0.5), rgba(1, 86, 104, 0.1));
+  background-size: cover;
+}
+
+.about_bio-exp {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.about_bio-exp > .jobs_job {
+  height: 50%;
+}
+
+.about_bio-exp > div {
+  -webkit-box-flex: 1;
+      -ms-flex-positive: 1;
+          flex-grow: 1;
+}
+
+@media (min-width: 768px) and (max-width: 1023px) {
+  .about_bio-exp > div h2 {
+    font-size: 18px;
+  }
+  .about_bio-exp > div h3 {
+    font-size: 16px;
+  }
+  .about_bio-exp > div h6 {
+    font-size: 12px;
+  }
+}
+
+@media (min-width: 480px) and (max-width: 765px) {
+  .about_bio-exp > div h2 {
+    font-size: 18px;
+  }
+  .about_bio-exp > div h3 {
+    font-size: 16px;
+  }
+  .about_bio-exp > div h6 {
+    font-size: 12px;
+  }
 }
 
 body {
-  background: #272727;
+  background: #263f44;
   color: #fff;
   height: 100vh;
   font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif, "微軟正黑體";
@@ -247,7 +306,7 @@ a {
 }
 
 .text-secondary {
-  color: #ff652f;
+  color: #ffd369;
 }
 
 section {
@@ -280,11 +339,11 @@ main .social-icons a {
 }
 
 main .social-icons a:hover {
-  color: #ff652f;
+  color: #ffd369;
 }
 
 .text-secondary {
-  color: #ff652f;
+  color: #ffd369;
 }
 
 ::-webkit-scrollbar {

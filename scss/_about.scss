@@ -1,26 +1,69 @@
 .about {
-  padding-top: 4rem;
-
-  &_bio-image {
-    height: 50vh;
-    width: 100%;
-    background: linear-gradient(
-        to right,
-        rgba($primary-color, 0.9),
-        rgba($primary-color, 0.3)
-      ),
-      url("../img/profile.jpg") center top;
-    background-size: cover;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: flex-end;
-
-    .text-secondary{
-        
+  padding-top: 2rem;
+  min-height: 100%;
+  width: 80%;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  .about:first-child {
+    flex-grow: 1;
+  }
+  &_bio {
+    p {
+      letter-spacing: 3px;
+      line-height: 20px;
+    }
+    @media #{$tablet} {
+      p {
+        font-size: 14px;
+      }
+    }
+    @media #{$mobile} {
+      p {
+        font-size: 12px;
+      }
     }
   }
-  &_bio > p {
-    line-height: 16px;
+  &_bio-image {
+    border-radius: 10px;
+    width: 100%;
+    background: linear-gradient(
+      to left,
+      rgba($tertiary-color, 0.5),
+      rgba($tertiary-color, 0.1)
+    );
+    background-size: cover;
+  }
+  &_bio-exp {
+    display: flex;
+    > .jobs_job {
+      height: 50%;
+    }
+    > div {
+      flex-grow: 1;
+      @media #{$tablet} {
+        h2 {
+          font-size: 18px;
+        }
+        h3 {
+          font-size: 16px;
+        }
+        h6 {
+          font-size: 12px;
+        }
+      }
+      @media #{$mobile} {
+        h2 {
+          font-size: 18px;
+        }
+        h3 {
+          font-size: 16px;
+        }
+        h6 {
+          font-size: 12px;
+        }
+      }
+    }
   }
 }

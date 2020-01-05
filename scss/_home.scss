@@ -3,14 +3,15 @@
   padding-top: 40vh;
   overflow: hidden;
   align-items: center;
-  text-align: center;
+  text-align: right;
   background: linear-gradient(
       to right,
-      rgba($primary-color, 0.9),
-      rgba($primary-color, 0.3)
+      rgba($primary-color, 0.5),
+      rgba($primary-color, 0.1)
     ),
-    url("../img/profile.jpg") center top;
+    url("/img/2nd date in Japan 👫🌻_200105_0134.jpg") center center;
   background-size: cover;
+  background-repeat: no-repeat;
 
   &_name {
     font-size: 5rem;

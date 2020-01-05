@@ -1,6 +1,10 @@
-$primary-color: #272727;
-$secondary-color: #ff652f;
+$primary-color: #263f44;
+$secondary-color: #ffd369;
+$tertiary-color: #015668;
 $big-font-weight: 400;
+$tablet: "(min-width: 768px) and (max-width: 1023px)";
+$desktop: "(min-width: 1024px)";
+$mobile: "(min-width: 480px) and (max-width: 765px)";
 
 * {
   box-sizing: border-box;
