@@ -484,6 +484,13 @@
   padding-top: 10vh;
   margin: 0 auto;
   width: 80%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
 }
 
 .skill_main .section-title {
@@ -514,34 +521,76 @@
   }
 }
 
-.projects {
-  display: -ms-grid;
-  display: grid;
-  grid-gap: 0.7rem;
-  -ms-grid-columns: (1fr)[3];
-      grid-template-columns: repeat(3, 1fr);
-}
-
-.projects.lg-heading {
-  font-size: 6rem;
-}
-
-.projects.sm-heading {
-  margin-bottom: 2rem;
-  padding: 0.2rem 1rem;
-  background: rgba(42, 69, 75, 0.5);
-}
-
-.projects img {
+.skill_main-wrapper {
+  margin-top: 5vh;
+  -webkit-box-flex: 1;
+      -ms-flex-positive: 1;
+          flex-grow: 1;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  border-radius: 10px;
   width: 100%;
-  border: 3px #fff solid;
+  background: -webkit-gradient(linear, left top, right top, from(rgba(1, 86, 104, 0.8)), to(rgba(1, 86, 104, 0.1)));
+  background: linear-gradient(to right, rgba(1, 86, 104, 0.8), rgba(1, 86, 104, 0.1));
+  background-size: cover;
 }
 
-.projects img:hover {
-  opacity: 0.5;
-  border-color: #ffd369;
-  -webkit-transition: all 0.5s ease-in-out;
-  transition: all 0.5s ease-in-out;
+.project_main {
+  padding-top: 10vh;
+  margin: 0 auto;
+  width: 80%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+.project_main .section-title {
+  color: #ffd369;
+}
+
+@media all and (min-width: 960px) {
+  .project_main .section-title {
+    font-size: 40px;
+  }
+}
+
+@media all and (min-width: 760px) and (max-width: 959px) {
+  .project_main .section-title {
+    font-size: 30px;
+  }
+}
+
+@media all and (min-width: 480px) and (max-width: 759px) {
+  .project_main .section-title {
+    font-size: 26px;
+  }
+}
+
+@media all and (min-width: 480px) and (max-width: 759px) {
+  .project_main .section-title {
+    font-size: 22px;
+  }
+}
+
+.project_main-wrapper {
+  margin-top: 5vh;
+  -webkit-box-flex: 1;
+      -ms-flex-positive: 1;
+          flex-grow: 1;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.project_main-wrapper > card {
+  -webkit-box-flex: 1;
+      -ms-flex-positive: 1;
+          flex-grow: 1;
 }
 
 body {
