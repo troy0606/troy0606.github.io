@@ -7,10 +7,9 @@
 }
 
 .home {
-  padding: 0 20px;
+  position: relative;
   font-family: "Playfair Display", serif;
   height: 100%;
-  padding-top: 40vh;
   overflow: hidden;
   -webkit-box-align: center;
       -ms-flex-align: center;
@@ -32,6 +31,33 @@
 .home_name--last {
   color: #ffd369;
   font-weight: 700;
+}
+
+.slide {
+  position: absolute;
+  top: 40vh;
+  height: 100%;
+  width: 100%;
+  -webkit-animation: slide 3s 1s 1 normal both;
+          animation: slide 3s 1s 1 normal both;
+}
+
+@-webkit-keyframes slide {
+  from {
+    left: -100%;
+  }
+  to {
+    left: -7%;
+  }
+}
+
+@keyframes slide {
+  from {
+    left: -100%;
+  }
+  to {
+    left: -7%;
+  }
 }
 
 .menu-btn {

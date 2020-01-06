@@ -1,8 +1,7 @@
 .home {
-  padding: 0 20px;
+  position: relative;
   font-family: "Playfair Display", serif;
   height: 100%;
-  padding-top: 40vh;
   overflow: hidden;
   align-items: center;
   text-align: right;
@@ -25,5 +24,23 @@
       color: $secondary-color;
       font-weight: 700;
     }
+  }
+}
+
+.slide {
+  position: absolute;
+  top: 40vh;
+  height: 100%;
+  width: 100%;
+  animation: slide 3s 1s 1 normal both;
+}
+
+@keyframes slide {
+  from {
+    left: -100%;
+  }
+
+  to {
+    left: -7%;
   }
 }
