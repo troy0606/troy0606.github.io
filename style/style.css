@@ -1,4 +1,6 @@
 @charset "UTF-8";
+/*把變數帶入mixin中，此mixin只就單純把media queries寫到我的mixin中，
+並且使用我上面設立的變數來調動media queries的width*/
 * {
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
@@ -249,20 +251,60 @@
           flex-grow: 1;
 }
 
+.about_bio .section-title {
+  color: #ffd369;
+}
+
+@media all and (min-width: 960px) {
+  .about_bio .section-title {
+    font-size: 40px;
+  }
+}
+
+@media all and (min-width: 760px) and (max-width: 959px) {
+  .about_bio .section-title {
+    font-size: 30px;
+  }
+}
+
+@media all and (min-width: 480px) and (max-width: 759px) {
+  .about_bio .section-title {
+    font-size: 26px;
+  }
+}
+
+@media all and (min-width: 480px) and (max-width: 759px) {
+  .about_bio .section-title {
+    font-size: 22px;
+  }
+}
+
 .about_bio p {
   letter-spacing: 3px;
   line-height: 20px;
 }
 
-@media (min-width: 768px) and (max-width: 1023px) {
+@media all and (min-width: 960px) {
   .about_bio p {
-    font-size: 14px;
+    font-size: 20px;
   }
 }
 
-@media (min-width: 480px) and (max-width: 765px) {
+@media all and (min-width: 760px) and (max-width: 959px) {
   .about_bio p {
-    font-size: 12px;
+    font-size: 18px;
+  }
+}
+
+@media all and (min-width: 480px) and (max-width: 759px) {
+  .about_bio p {
+    font-size: 16px;
+  }
+}
+
+@media all and (min-width: 480px) and (max-width: 759px) {
+  .about_bio p {
+    font-size: 14px;
   }
 }
 
@@ -274,24 +316,36 @@
   background-size: cover;
 }
 
-@media (min-width: 768px) and (max-width: 1023px) {
-  .about_bio-lightBox {
-    font-size: 14px;
-  }
-}
-
-@media (min-width: 480px) and (max-width: 765px) {
-  .about_bio-lightBox {
-    font-size: 12px;
-  }
-}
-
 .about_bio-lightBox {
   margin-top: 20px;
   text-decoration: none;
   cursor: pointer;
   font-size: 8px;
   padding-left: 80%;
+}
+
+@media all and (min-width: 960px) {
+  .about_bio-lightBox {
+    font-size: 14px;
+  }
+}
+
+@media all and (min-width: 760px) and (max-width: 959px) {
+  .about_bio-lightBox {
+    font-size: 14px;
+  }
+}
+
+@media all and (min-width: 480px) and (max-width: 759px) {
+  .about_bio-lightBox {
+    font-size: 14px;
+  }
+}
+
+@media all and (min-width: 480px) and (max-width: 759px) {
+  .about_bio-lightBox {
+    font-size: 12px;
+  }
 }
 
 .about_bio-lightBox:hover {
@@ -314,25 +368,73 @@
           flex-grow: 1;
 }
 
-@media (min-width: 768px) and (max-width: 1023px) {
+@media all and (min-width: 960px) {
   .about_bio-exp > div h2 {
-    font-size: 18px;
-  }
-  .about_bio-exp > div h3 {
-    font-size: 16px;
-  }
-  .about_bio-exp > div h6 {
-    font-size: 12px;
+    font-size: 30px;
   }
 }
 
-@media (min-width: 480px) and (max-width: 765px) {
+@media all and (min-width: 760px) and (max-width: 959px) {
+  .about_bio-exp > div h2 {
+    font-size: 24px;
+  }
+}
+
+@media all and (min-width: 480px) and (max-width: 759px) {
+  .about_bio-exp > div h2 {
+    font-size: 20px;
+  }
+}
+
+@media all and (min-width: 480px) and (max-width: 759px) {
   .about_bio-exp > div h2 {
     font-size: 18px;
   }
+}
+
+@media all and (min-width: 960px) {
   .about_bio-exp > div h3 {
+    font-size: 26px;
+  }
+}
+
+@media all and (min-width: 760px) and (max-width: 959px) {
+  .about_bio-exp > div h3 {
+    font-size: 20px;
+  }
+}
+
+@media all and (min-width: 480px) and (max-width: 759px) {
+  .about_bio-exp > div h3 {
+    font-size: 18px;
+  }
+}
+
+@media all and (min-width: 480px) and (max-width: 759px) {
+  .about_bio-exp > div h3 {
+    font-size: 14px;
+  }
+}
+
+@media all and (min-width: 960px) {
+  .about_bio-exp > div h6 {
+    font-size: 20px;
+  }
+}
+
+@media all and (min-width: 760px) and (max-width: 959px) {
+  .about_bio-exp > div h6 {
+    font-size: 18px;
+  }
+}
+
+@media all and (min-width: 480px) and (max-width: 759px) {
+  .about_bio-exp > div h6 {
     font-size: 16px;
   }
+}
+
+@media all and (min-width: 480px) and (max-width: 759px) {
   .about_bio-exp > div h6 {
     font-size: 12px;
   }
@@ -376,6 +478,70 @@
   font-size: 12px;
   letter-spacing: 3px;
   line-height: 16px;
+}
+
+.skill_main {
+  padding-top: 10vh;
+  margin: 0 auto;
+  width: 80%;
+}
+
+.skill_main .section-title {
+  color: #ffd369;
+}
+
+@media all and (min-width: 960px) {
+  .skill_main .section-title {
+    font-size: 40px;
+  }
+}
+
+@media all and (min-width: 760px) and (max-width: 959px) {
+  .skill_main .section-title {
+    font-size: 30px;
+  }
+}
+
+@media all and (min-width: 480px) and (max-width: 759px) {
+  .skill_main .section-title {
+    font-size: 26px;
+  }
+}
+
+@media all and (min-width: 480px) and (max-width: 759px) {
+  .skill_main .section-title {
+    font-size: 22px;
+  }
+}
+
+.projects {
+  display: -ms-grid;
+  display: grid;
+  grid-gap: 0.7rem;
+  -ms-grid-columns: (1fr)[3];
+      grid-template-columns: repeat(3, 1fr);
+}
+
+.projects.lg-heading {
+  font-size: 6rem;
+}
+
+.projects.sm-heading {
+  margin-bottom: 2rem;
+  padding: 0.2rem 1rem;
+  background: rgba(42, 69, 75, 0.5);
+}
+
+.projects img {
+  width: 100%;
+  border: 3px #fff solid;
+}
+
+.projects img:hover {
+  opacity: 0.5;
+  border-color: #ffd369;
+  -webkit-transition: all 0.5s ease-in-out;
+  transition: all 0.5s ease-in-out;
 }
 
 body {

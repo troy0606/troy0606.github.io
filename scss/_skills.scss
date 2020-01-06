@@ -1,0 +1,16 @@
+.skill {
+  &_main {
+    padding-top: 10vh;
+    margin: 0 auto;
+    width: 80%;
+    .section-title {
+      color: $secondary-color;
+      @include responsive-fontSize(
+        $sectionTitleSizePC,
+        $sectionTitleSizePad,
+        $sectionTitleSizeSmPad,
+        $sectionTitleSizePhone
+      );
+    }
+  }
+}

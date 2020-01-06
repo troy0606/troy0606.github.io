@@ -2,10 +2,26 @@ $primary-color: #263f44;
 $secondary-color: #ffd369;
 $tertiary-color: #015668;
 $big-font-weight: 400;
-$tablet: "(min-width: 768px) and (max-width: 1023px)";
-$desktop: "(min-width: 1024px)";
-$mobile: "(min-width: 480px) and (max-width: 765px)";
 
+$pc-media: 960px;
+$pcs-media: 959px;
+$pad-media: 760px;
+$pads-media: 759px;
+$phone-media: 480px;
+$phones-media: 479px;
+
+/*把變數帶入mixin中，此mixin只就單純把media queries寫到我的mixin中，
+並且使用我上面設立的變數來調動media queries的width*/
+
+$sectionTitleSizePC: 40px;
+$sectionTitleSizePad: 30px;
+$sectionTitleSizeSmPad: 26px;
+$sectionTitleSizePhone: 22px;
+
+$sectionParagraphSizePC: 20px;
+$sectionParagraphSizePad: 18px;
+$sectionParagraphSizeSmPad: 16px;
+$sectionParagraphSizePhone: 14px;
 * {
   box-sizing: border-box;
   margin: 0;
@@ -21,5 +37,49 @@ $mobile: "(min-width: 480px) and (max-width: 765px)";
     @return #000;
   } @else {
     @return #fff;
+  }
+}
+
+//電腦
+@mixin pc-width() {
+  @media all and (min-width: $pc-media) {
+    @content;
+  }
+}
+//平板
+@mixin pad-width() {
+  @media all and (min-width: $pad-media) and (max-width: $pcs-media) {
+    @content;
+  }
+}
+//小平板
+@mixin small-pad-width() {
+  @media all and (min-width: $phone-media) and (max-width: $pads-media) {
+    @content;
+  }
+}
+//手機
+@mixin phone-width() {
+  @media all and (max-width: $phones-media) {
+    @content;
+  }
+}
+
+@mixin responsive-fontSize($pc, $pad, $small-pad, $phone) {
+  //電腦版
+  @include pc-width {
+    font-size: $pc;
+  }
+  //平板
+  @include pad-width {
+    font-size: $pad;
+  }
+  //小平板
+  @include small-pad-width {
+    font-size: $small-pad;
+  }
+  //手機
+  @include small-pad-width {
+    font-size: $phone;
   }
 }
