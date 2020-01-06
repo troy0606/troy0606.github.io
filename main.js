@@ -44,14 +44,6 @@ $(".menu-nav li").click(function() {
     700
   );
 });
-// $(".chart").easyPieChart({
-//   lineWidth: 10,
-//   lineCap: "butt",
-//   barColor: "#f0cf85",
-//   trackColor: "#ecf0f1",
-//   size: 160,
-//   animate: 1000
-// });
 
 let $window = $(window);
 
@@ -81,9 +73,51 @@ function checkWidth() {
       opacity: 0,
       top: "-100%"
     });
+    drawDonutChart("#html5", $("#html5").data("percent"), 160, 160, ".20em");
+    drawDonutChart("#css3", $("#css3").data("percent"), 160, 160, ".20em");
+    drawDonutChart(
+      "#javascript",
+      $("#javascript").data("percent"),
+      160,
+      160,
+      ".20em"
+    );
+    drawDonutChart("#jquery", $("#jquery").data("percent"), 160, 160, ".20em");
+    drawDonutChart(
+      "#react-js",
+      $("#react-js").data("percent"),
+      160,
+      160,
+      ".20em"
+    );
+    drawDonutChart("#mysql", $("#mysql").data("percent"), 160, 160, ".20em");
+    drawDonutChart("#php", $("#php").data("percent"), 160, 160, ".20em");
+    drawDonutChart("#nodejs", $("#nodejs").data("percent"), 160, 160, ".20em");
+    $(".skill_main-wrapper .chart").css("padding", "20px 50px");
   } else {
+    drawDonutChart("#html5", $("#html5").data("percent"), 80, 80, ".20em");
+    drawDonutChart("#css3", $("#css3").data("percent"), 80, 80, ".20em");
+    drawDonutChart(
+      "#javascript",
+      $("#javascript").data("percent"),
+      80,
+      80,
+      ".20em"
+    );
+    drawDonutChart("#jquery", $("#jquery").data("percent"), 80, 80, ".20em");
+    drawDonutChart(
+      "#react-js",
+      $("#react-js").data("percent"),
+      80,
+      80,
+      ".20em"
+    );
+    drawDonutChart("#mysql", $("#mysql").data("percent"), 80, 80, ".20em");
+    drawDonutChart("#php", $("#php").data("percent"), 80, 80, ".20em");
+    drawDonutChart("#nodejs", $("#nodejs").data("percent"), 80, 80, ".20em");
     bio.find("p:first").css("display", "none");
     $(".about_bio-lightBox").css("display", "block");
+    $(".skill_main-wrapper .chart").css("padding", "10px 5px");
     if ($(".about_bio p").length === 1) {
       bio.append(paragraphContent, paragraphLightBox);
     } else {
@@ -110,3 +144,82 @@ $(".about_bio-hide").click(() => {
     top: "-100%"
   });
 });
+
+let duration = 2000,
+  transition = 2000;
+
+function drawDonutChart(element, percent, width, height, text_y) {
+  if ($(element + " svg").length === 0 && width) {
+    width = typeof width !== "undefined" ? width : 290;
+    height = typeof height !== "undefined" ? height : 290;
+    text_y = typeof text_y !== "undefined" ? text_y : "-.10em";
+
+    let dataset = {
+        lower: calcPercent(0),
+        upper: calcPercent(percent)
+      },
+      radius = Math.min(width, height) / 2,
+      pie = d3.layout.pie().sort(null),
+      format = d3.format(".0%");
+
+    let arc = d3.svg
+      .arc()
+      .innerRadius(radius - 20)
+      .outerRadius(radius);
+
+    let svg = d3
+      .select(element)
+      .append("svg")
+      .attr("width", width)
+      .attr("height", height)
+      .append("g")
+      .attr("transform", "translate(" + width / 2 + "," + height / 2 + ")");
+
+    let path = svg
+      .selectAll("path")
+      .data(pie(dataset.lower))
+      .enter()
+      .append("path")
+      .attr("class", function(d, i) {
+        return "color" + i;
+      })
+      .attr("d", arc)
+      .each(function(d) {
+        this._current = d;
+      }); // store the initial values
+
+    let text = svg
+      .append("text")
+      .attr("text-anchor", "middle")
+      .attr("dy", text_y);
+
+    if (typeof percent === "string") {
+      text.text(percent);
+    } else {
+      let progress = 0;
+      let timeout = setTimeout(function() {
+        clearTimeout(timeout);
+        path = path.data(pie(dataset.upper)); // update the data
+        path
+          .transition()
+          .duration(duration)
+          .attrTween("d", function(a) {
+            // Store the displayed angles in _current.
+            // Then, interpolate from _current to the new angles.
+            // During the transition, _current is updated in-place by d3.interpolate.
+            let i = d3.interpolate(this._current, a);
+            let i2 = d3.interpolate(progress, percent);
+            this._current = i(0);
+            return function(t) {
+              text.text(format(i2(t) / 100));
+              return arc(i(t));
+            };
+          }); // redraw the arcs
+      }, 200);
+    }
+  }
+}
+
+function calcPercent(percent) {
+  return [percent, 100 - percent];
+}

@@ -275,7 +275,7 @@
 
 @media all and (min-width: 480px) and (max-width: 759px) {
   .about_bio .section-title {
-    font-size: 22px;
+    font-size: 24px;
   }
 }
 
@@ -517,7 +517,7 @@
 
 @media all and (min-width: 480px) and (max-width: 759px) {
   .skill_main .section-title {
-    font-size: 22px;
+    font-size: 24px;
   }
 }
 
@@ -530,10 +530,71 @@
   display: -ms-flexbox;
   display: flex;
   border-radius: 10px;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
   width: 100%;
   background: -webkit-gradient(linear, left top, right top, from(rgba(1, 86, 104, 0.8)), to(rgba(1, 86, 104, 0.1)));
   background: linear-gradient(to right, rgba(1, 86, 104, 0.8), rgba(1, 86, 104, 0.1));
   background-size: cover;
+}
+
+.skill_main-wrapper > card {
+  -webkit-box-flex: 1;
+      -ms-flex-positive: 1;
+          flex-grow: 1;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.skill_main-wrapper > card .chart {
+  margin: 0 auto;
+  padding: 20px 50px;
+  width: 25%;
+}
+
+.skill_main-wrapper > card .chart h4 {
+  margin-bottom: 30px;
+}
+
+@media all and (min-width: 960px) {
+  .skill_main-wrapper > card .chart h4 {
+    font-size: 30;
+  }
+}
+
+@media all and (min-width: 760px) and (max-width: 959px) {
+  .skill_main-wrapper > card .chart h4 {
+    font-size: 26;
+  }
+}
+
+@media all and (min-width: 480px) and (max-width: 759px) {
+  .skill_main-wrapper > card .chart h4 {
+    font-size: 22;
+  }
+}
+
+@media all and (min-width: 480px) and (max-width: 759px) {
+  .skill_main-wrapper > card .chart h4 {
+    font-size: 18;
+  }
+}
+
+.skill_main-wrapper > card .chart path.color0 {
+  fill: #ffd369;
+}
+
+.skill_main-wrapper > card .chart path.color1 {
+  fill: #015668;
+}
+
+.skill_main-wrapper > card .chart text {
+  font-family: sans-serif;
+  line-height: 16rem;
+  fill: #fff;
 }
 
 .project_main {
@@ -573,7 +634,7 @@
 
 @media all and (min-width: 480px) and (max-width: 759px) {
   .project_main .section-title {
-    font-size: 22px;
+    font-size: 24px;
   }
 }
 
