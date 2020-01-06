@@ -67,56 +67,19 @@ function checkWidth() {
     .addClass("about_bio-lightBox");
   if (windowSize > 800) {
     $(".about_bio-lightBox").css("display", "none");
+    $(".shadow").css("display", "none");
     bio.find("p:last").css("display", "none");
     bio.find("p:first").css("display", "flex");
     $(".about_bio-hide").css({
       opacity: 0,
       top: "-100%"
     });
-    drawDonutChart("#html5", $("#html5").data("percent"), 160, 160, ".20em");
-    drawDonutChart("#css3", $("#css3").data("percent"), 160, 160, ".20em");
-    drawDonutChart(
-      "#javascript",
-      $("#javascript").data("percent"),
-      160,
-      160,
-      ".20em"
-    );
-    drawDonutChart("#jquery", $("#jquery").data("percent"), 160, 160, ".20em");
-    drawDonutChart(
-      "#react-js",
-      $("#react-js").data("percent"),
-      160,
-      160,
-      ".20em"
-    );
-    drawDonutChart("#mysql", $("#mysql").data("percent"), 160, 160, ".20em");
-    drawDonutChart("#php", $("#php").data("percent"), 160, 160, ".20em");
-    drawDonutChart("#nodejs", $("#nodejs").data("percent"), 160, 160, ".20em");
-    $(".skill_main-wrapper .chart").css("padding", "20px 50px");
+    $(".chart").css("display", "block");
   } else {
-    drawDonutChart("#html5", $("#html5").data("percent"), 80, 80, ".20em");
-    drawDonutChart("#css3", $("#css3").data("percent"), 80, 80, ".20em");
-    drawDonutChart(
-      "#javascript",
-      $("#javascript").data("percent"),
-      80,
-      80,
-      ".20em"
-    );
-    drawDonutChart("#jquery", $("#jquery").data("percent"), 80, 80, ".20em");
-    drawDonutChart(
-      "#react-js",
-      $("#react-js").data("percent"),
-      80,
-      80,
-      ".20em"
-    );
-    drawDonutChart("#mysql", $("#mysql").data("percent"), 80, 80, ".20em");
-    drawDonutChart("#php", $("#php").data("percent"), 80, 80, ".20em");
-    drawDonutChart("#nodejs", $("#nodejs").data("percent"), 80, 80, ".20em");
+    $(".chart").css("display", "none");
     bio.find("p:first").css("display", "none");
     $(".about_bio-lightBox").css("display", "block");
+    $(".shadow").css("display", "block");
     $(".skill_main-wrapper .chart").css("padding", "10px 5px");
     if ($(".about_bio p").length === 1) {
       bio.append(paragraphContent, paragraphLightBox);
@@ -137,6 +100,17 @@ $(".about_bio").on("click", ".about_bio-lightBox", () => {
   });
 });
 
+$(".skill_main-wrapper").on("click", "path", function() {
+  $(".skill_main-wrapper path")
+    .not(this)
+    .css({
+      opacity: 0.5
+    });
+  $(this).css({
+    opacity: 1
+  });
+});
+
 $(".about_bio-hide").click(() => {
   event.stopPropagation();
   $(".about_bio-hide").css({
@@ -147,79 +121,210 @@ $(".about_bio-hide").click(() => {
 
 let duration = 2000,
   transition = 2000;
+drawDonutChart("#html5", $("#html5").data("percent"), 160, 160, ".20em");
+drawDonutChart("#css3", $("#css3").data("percent"), 160, 160, ".20em");
+drawDonutChart(
+  "#javascript",
+  $("#javascript").data("percent"),
+  160,
+  160,
+  ".20em"
+);
+drawDonutChart("#jquery", $("#jquery").data("percent"), 160, 160, ".20em");
+drawDonutChart("#react-js", $("#react-js").data("percent"), 160, 160, ".20em");
+drawDonutChart("#mysql", $("#mysql").data("percent"), 160, 160, ".20em");
+drawDonutChart("#php", $("#php").data("percent"), 160, 160, ".20em");
+drawDonutChart("#nodejs", $("#nodejs").data("percent"), 160, 160, ".20em");
+$(".skill_main-wrapper .chart").css("padding", "20px 50px");
 
 function drawDonutChart(element, percent, width, height, text_y) {
-  if ($(element + " svg").length === 0 && width) {
-    width = typeof width !== "undefined" ? width : 290;
-    height = typeof height !== "undefined" ? height : 290;
-    text_y = typeof text_y !== "undefined" ? text_y : "-.10em";
+  width = typeof width !== "undefined" ? width : 290;
+  height = typeof height !== "undefined" ? height : 290;
+  text_y = typeof text_y !== "undefined" ? text_y : "-.10em";
 
-    let dataset = {
-        lower: calcPercent(0),
-        upper: calcPercent(percent)
-      },
-      radius = Math.min(width, height) / 2,
-      pie = d3.layout.pie().sort(null),
-      format = d3.format(".0%");
+  let dataset = {
+      lower: calcPercent(0),
+      upper: calcPercent(percent)
+    },
+    radius = Math.min(width, height) / 2,
+    pie = d3.layout.pie().sort(null),
+    format = d3.format(".0%");
 
-    let arc = d3.svg
-      .arc()
-      .innerRadius(radius - 20)
-      .outerRadius(radius);
+  let arc = d3.svg
+    .arc()
+    .innerRadius(radius - 20)
+    .outerRadius(radius);
 
-    let svg = d3
-      .select(element)
-      .append("svg")
-      .attr("width", width)
-      .attr("height", height)
-      .append("g")
-      .attr("transform", "translate(" + width / 2 + "," + height / 2 + ")");
+  let svg = d3
+    .select(element)
+    .append("svg")
+    .attr("width", width)
+    .attr("height", height)
+    .append("g")
+    .attr("transform", "translate(" + width / 2 + "," + height / 2 + ")");
 
-    let path = svg
-      .selectAll("path")
-      .data(pie(dataset.lower))
-      .enter()
-      .append("path")
-      .attr("class", function(d, i) {
-        return "color" + i;
-      })
-      .attr("d", arc)
-      .each(function(d) {
-        this._current = d;
-      }); // store the initial values
+  let path = svg
+    .selectAll("path")
+    .data(pie(dataset.lower))
+    .enter()
+    .append("path")
+    .attr("class", function(d, i) {
+      return "color" + i;
+    })
+    .attr("d", arc)
+    .each(function(d) {
+      this._current = d;
+    }); // store the initial values
 
-    let text = svg
-      .append("text")
-      .attr("text-anchor", "middle")
-      .attr("dy", text_y);
+  let text = svg
+    .append("text")
+    .attr("text-anchor", "middle")
+    .attr("dy", text_y);
 
-    if (typeof percent === "string") {
-      text.text(percent);
-    } else {
-      let progress = 0;
-      let timeout = setTimeout(function() {
-        clearTimeout(timeout);
-        path = path.data(pie(dataset.upper)); // update the data
-        path
-          .transition()
-          .duration(duration)
-          .attrTween("d", function(a) {
-            // Store the displayed angles in _current.
-            // Then, interpolate from _current to the new angles.
-            // During the transition, _current is updated in-place by d3.interpolate.
-            let i = d3.interpolate(this._current, a);
-            let i2 = d3.interpolate(progress, percent);
-            this._current = i(0);
-            return function(t) {
-              text.text(format(i2(t) / 100));
-              return arc(i(t));
-            };
-          }); // redraw the arcs
-      }, 200);
-    }
+  if (typeof percent === "string") {
+    text.text(percent);
+  } else {
+    let progress = 0;
+    let timeout = setTimeout(function() {
+      clearTimeout(timeout);
+      path = path.data(pie(dataset.upper)); // update the data
+      path
+        .transition()
+        .duration(duration)
+        .attrTween("d", function(a) {
+          // Store the displayed angles in _current.
+          // Then, interpolate from _current to the new angles.
+          // During the transition, _current is updated in-place by d3.interpolate.
+          let i = d3.interpolate(this._current, a);
+          let i2 = d3.interpolate(progress, percent);
+          this._current = i(0);
+          return function(t) {
+            text.text(format(i2(t) / 100));
+            return arc(i(t));
+          };
+        }); // redraw the arcs
+    }, 200);
   }
 }
 
 function calcPercent(percent) {
   return [percent, 100 - percent];
+}
+
+let dataset = [
+  { name: "HTML5", count: 2742 },
+  { name: "CSS3", count: 2242 },
+  { name: "JAVASCRIPT", count: 3112 },
+  { name: "JQuery", count: 937 },
+  { name: "REACT JS", count: 1450 },
+  { name: "My SQL", count: 1450 },
+  { name: "NodeJS", count: 1450 },
+  { name: "PHP", count: 1450 }
+];
+
+let pie = d3.layout
+  .pie()
+  .value(function(d) {
+    return d.count;
+  })
+  .sort(null);
+
+let w = 300,
+  h = 300;
+
+let outerRadiusArc = w / 2;
+let innerRadiusArc = 100;
+let shadowWidth = 10;
+
+let outerRadiusArcShadow = innerRadiusArc + 1;
+let innerRadiusArcShadow = innerRadiusArc - shadowWidth;
+
+let color = d3.scale
+  .ordinal()
+  .range(["#41B787", "#6352B9", "#B65480", "#D5735A", "#D7D9DA"]);
+
+let svg = d3
+  .select("#chart-container")
+  .append("svg")
+  .attr({
+    width: w,
+    height: h,
+    class: "shadow"
+  })
+  .append("g")
+  .attr({
+    transform: "translate(" + w / 2 + "," + h / 2 + ")"
+  });
+
+let createChart = function(
+  svg,
+  outerRadius,
+  innerRadius,
+  fillFunction,
+  className
+) {
+  let arc = d3.svg
+    .arc()
+    .innerRadius(outerRadius)
+    .outerRadius(innerRadius);
+
+  let path = svg
+    .selectAll("." + className)
+    .data(pie(dataset))
+    .enter()
+    .append("path")
+    .attr({
+      class: className,
+      d: arc,
+      fill: fillFunction
+    });
+
+  path
+    .transition()
+    .duration(1000)
+    .attrTween("d", function(d) {
+      let interpolate = d3.interpolate({ startAngle: 0, endAngle: 0 }, d);
+      return function(t) {
+        return arc(interpolate(t));
+      };
+    });
+};
+
+createChart(
+  svg,
+  outerRadiusArc,
+  innerRadiusArc,
+  function(d, i) {
+    return color(d.data.name);
+  },
+  "path1"
+);
+
+createChart(
+  svg,
+  outerRadiusArcShadow,
+  innerRadiusArcShadow,
+  function(d, i) {
+    let c = d3.hsl(color(d.data.name));
+    return d3.hsl(c.h + 5, c.s - 0.07, c.l - 0.15);
+  },
+  "path2"
+);
+
+let addText = function(text, y, size) {
+  svg
+    .append("text")
+    .text(text)
+    .attr({
+      "text-anchor": "middle",
+      y: y
+    })
+    .style({
+      fill: "#929DAF",
+      "font-size": size
+    });
+};
+
+function numberWithCommas(x) {
+  return x.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
 }

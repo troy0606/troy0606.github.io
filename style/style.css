@@ -597,6 +597,15 @@
   fill: #fff;
 }
 
+#chart-container {
+  padding: 25px;
+}
+
+#chart-container .shadow {
+  -webkit-filter: drop-shadow(0px 3px 3px rgba(0, 0, 0, 0.5));
+  filter: drop-shadow(0px 3px 3px rgba(0, 0, 0, 0.5));
+}
+
 .project_main {
   padding-top: 10vh;
   margin: 0 auto;
