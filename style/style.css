@@ -601,9 +601,19 @@
   padding: 25px;
 }
 
+#chart-container .skill_check {
+  font-size: 40px;
+  text-align: center;
+}
+
 #chart-container .shadow {
   -webkit-filter: drop-shadow(0px 3px 3px rgba(0, 0, 0, 0.5));
   filter: drop-shadow(0px 3px 3px rgba(0, 0, 0, 0.5));
+  -webkit-box-flex: 1;
+      -ms-flex-positive: 1;
+          flex-grow: 1;
+  padding-top: 10vh;
+  margin: 0 auto;
 }
 
 .project_main {

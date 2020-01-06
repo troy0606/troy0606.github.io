@@ -74,9 +74,11 @@ function checkWidth() {
       opacity: 0,
       top: "-100%"
     });
-    $(".chart").css("display", "block");
+    $(".skill_main-wrapper card").css("display", "flex");
+    $(".skill_check").css("display", "none");
   } else {
-    $(".chart").css("display", "none");
+    $(".skill_main-wrapper card").css("display", "none");
+    $(".skill_check").css("display", "block");
     bio.find("p:first").css("display", "none");
     $(".about_bio-lightBox").css("display", "block");
     $(".shadow").css("display", "block");
@@ -97,17 +99,6 @@ $(".about_bio").on("click", ".about_bio-lightBox", () => {
   $(".about_bio-hide").css({
     opacity: 1,
     top: "0%"
-  });
-});
-
-$(".skill_main-wrapper").on("click", "path", function() {
-  $(".skill_main-wrapper path")
-    .not(this)
-    .css({
-      opacity: 0.5
-    });
-  $(this).css({
-    opacity: 1
   });
 });
 
@@ -212,14 +203,14 @@ function calcPercent(percent) {
 }
 
 let dataset = [
-  { name: "HTML5", count: 2742 },
-  { name: "CSS3", count: 2242 },
-  { name: "JAVASCRIPT", count: 3112 },
-  { name: "JQuery", count: 937 },
-  { name: "REACT JS", count: 1450 },
-  { name: "My SQL", count: 1450 },
-  { name: "NodeJS", count: 1450 },
-  { name: "PHP", count: 1450 }
+  { name: "HTML5", count: 60 },
+  { name: "CSS3", count: 50 },
+  { name: "JAVASCRIPT", count: 60 },
+  { name: "JQuery", count: 50 },
+  { name: "REACT JS", count: 50 },
+  { name: "My SQL", count: 30 },
+  { name: "NodeJS", count: 40 },
+  { name: "PHP", count: 30 }
 ];
 
 let pie = d3.layout
@@ -311,20 +302,37 @@ createChart(
   "path2"
 );
 
-let addText = function(text, y, size) {
-  svg
-    .append("text")
-    .text(text)
-    .attr({
-      "text-anchor": "middle",
-      y: y
-    })
-    .style({
-      fill: "#929DAF",
-      "font-size": size
-    });
-};
+// let addText = function(text, y, size) {
+//   svg
+//     .append("text")
+//     .text(text)
+//     .attr({
+//       "text-anchor": "middle",
+//       y: y
+//     })
+//     .style({
+//       fill: "#929DAF",
+//       "font-size": size
+//     });
+// };
 
-function numberWithCommas(x) {
-  return x.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
-}
+// function numberWithCommas(x) {
+//   return x.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
+// }
+
+$(".skill_main-wrapper").on("click", ".shadow path", function() {
+  if ($(this).attr("class") === "path1") {
+    let index = $(".skill_main-wrapper .shadow path").index(this);
+    let skillName = dataset[index].name;
+    let skillPoint = dataset[index].count;
+    $(".skill_main-wrapper .skill_check").text(skillName);
+    $(".skill_main-wrapper path")
+      .not(this)
+      .css({
+        opacity: 0.5
+      });
+    $(this).css({
+      opacity: 1
+    });
+  }
+});
