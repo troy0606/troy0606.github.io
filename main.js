@@ -98,6 +98,7 @@ $(".about_bio").on("click", ".about_bio-lightBox", () => {
     opacity: 1,
     top: "0%"
   });
+  $(".skill-category li").css("z-index", 0);
 });
 
 $(".about_bio-hide").click(() => {
@@ -106,6 +107,7 @@ $(".about_bio-hide").click(() => {
     opacity: 0,
     top: "-100%"
   });
+  $(".skill-category li").css("z-index", 2);
 });
 
 function checkCard() {
@@ -352,6 +354,16 @@ $(".skill_main-wrapper").on("click", ".shadow path", function() {
     $(this).css({
       opacity: 1
     });
+    $(".skill-category li").css({
+      "font-weight": "normal",
+      color: "#fff"
+    });
+    $(".skill-category li")
+      .eq(index)
+      .css({
+        "font-weight": "bold",
+        color: "#ffd369"
+      });
   }
 });
 

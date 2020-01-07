@@ -74,6 +74,7 @@
     &-hide {
       position: fixed;
       top: -100%;
+      z-index: 2;
       right: 0%;
       height: 100%;
       width: 100%;

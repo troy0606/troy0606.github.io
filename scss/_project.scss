@@ -15,11 +15,24 @@
       );
     }
     &-wrapper {
+      border-radius: 10px;
+      background: linear-gradient(
+        to left,
+        rgba($tertiary-color, 0.8),
+        rgba($tertiary-color, 0.1)
+      );
+      background-size: cover;
       margin-top: 5vh;
       flex-grow: 1;
       display: flex;
+      @media all and (max-width: 800px) {
+        flex-direction: column;
+      }
       > card {
         flex-grow: 1;
+        h4 {
+          @include responsive-fontSize(30px, 24px, 22px, 18px);
+        }
       }
     }
   }
