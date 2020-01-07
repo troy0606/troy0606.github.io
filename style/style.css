@@ -607,6 +607,25 @@
   font-weight: lighter;
 }
 
+.skill_main-wrapper .skill-category {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  list-style: none;
+  position: absolute;
+  z-index: 3;
+  width: 100%;
+  cursor: pointer;
+  top: 90%;
+  left: 4vw;
+}
+
+.skill_main-wrapper .skill-category li {
+  width: 25%;
+}
+
 #chart-container {
   padding: 25px;
 }
@@ -624,6 +643,10 @@
           flex-grow: 1;
   padding-top: 10vh;
   margin: 0 auto;
+}
+
+#chart-container .shadow path {
+  cursor: pointer;
 }
 
 .project_main {

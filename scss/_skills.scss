@@ -60,6 +60,20 @@
         font-size: 60px;
         font-weight: lighter;
       }
+      .skill-category {
+        display: flex;
+        flex-wrap: wrap;
+        list-style: none;
+        position: absolute;
+        z-index: 3;
+        width: 100%;
+        cursor: pointer;
+        top: 90%;
+        left: 4vw;
+        li {
+          width: 25%;
+        }
+      }
     }
   }
 }
@@ -76,5 +90,8 @@
     flex-grow: 1;
     padding-top: 10vh;
     margin: 0 auto;
+    path {
+      cursor: pointer;
+    }
   }
 }

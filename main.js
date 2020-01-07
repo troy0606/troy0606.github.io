@@ -76,12 +76,16 @@ function checkWidth() {
     });
     $(".skill_main-wrapper card").css("display", "flex");
     $(".skill_check").css("display", "none");
+    $(".skill-category").css("display", "none");
+    $(".skill-point").css("display", "none");
   } else {
     $(".skill_main-wrapper card").css("display", "none");
     $(".skill_check").css("display", "block");
+    $(".skill-point").css("display", "block");
     bio.find("p:first").css("display", "none");
     $(".about_bio-lightBox").css("display", "block");
     $(".shadow").css("display", "block");
+    $(".skill-category").css("display", "flex");
     $(".skill_main-wrapper .chart").css("padding", "10px 5px");
     if ($(".about_bio p").length === 1) {
       bio.append(paragraphContent, paragraphLightBox);
@@ -325,12 +329,7 @@ $(".skill_main-wrapper").on("click", ".shadow path", function() {
     let index = $(".skill_main-wrapper .shadow path").index(this);
     let skillName = dataset[index].name;
     let skillPoint = dataset[index].count;
-    let skillSelectPoint = $(`<h6 class='skill-point'>${skillPoint} %</<h6>`);
-    if ($(".skill-point").text()) {
-      $(".skill-point").text(skillPoint + " %");
-    } else {
-      $(".skill_main-wrapper").append(skillSelectPoint);
-    }
+    $(".skill-point").text(skillPoint + " %");
     $(".skill_main-wrapper .skill_check").text(skillName);
     $(".skill_main-wrapper path")
       .not(this)
@@ -340,5 +339,18 @@ $(".skill_main-wrapper").on("click", ".shadow path", function() {
     $(this).css({
       opacity: 1
     });
+  }
+});
+
+$(".skill-category li").click(function() {
+  let skillName = $(this).text();
+  $(".skill_main-wrapper .skill_check").text(skillName);
+  let index;
+  for (let i = 0; i < dataset.length; i++) {
+    if (dataset[i].name === skillName) {
+      index = i;
+    } else {
+      continue;
+    }
   }
 });
