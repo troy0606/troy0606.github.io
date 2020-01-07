@@ -83,3 +83,22 @@ $sectionParagraphSizePhone: 14px;
     font-size: $phone;
   }
 }
+
+@mixin responsive-lineHeight($pc, $pad, $small-pad, $phone) {
+  //電腦版
+  @include pc-width {
+    line-height: $pc;
+  }
+  //平板
+  @include pad-width {
+    line-height: $pad;
+  }
+  //小平板
+  @include small-pad-width {
+    line-height: $small-pad;
+  }
+  //手機
+  @include small-pad-width {
+    line-height: $phone;
+  }
+}
