@@ -724,6 +724,74 @@
   -webkit-box-flex: 1;
       -ms-flex-positive: 1;
           flex-grow: 1;
+  padding: 2vw;
+}
+
+.project_main-wrapper > card .hovercell {
+  height: 60%;
+  width: 100%;
+  padding: 10px;
+  position: relative;
+  background-color: black;
+  overflow: hidden;
+  cursor: pointer;
+}
+
+.project_main-wrapper > card .hovercell .image-layer {
+  position: absolute;
+  display: block;
+  background-size: cover;
+  background-position: center;
+  width: 100%;
+  height: 100%;
+  -webkit-transform: scale(1.5);
+          transform: scale(1.5);
+  -webkit-transition: all 0.4s cubic-bezier(0.75, 0.25, 0.15, 0.49);
+  transition: all 0.4s cubic-bezier(0.75, 0.25, 0.15, 0.49);
+}
+
+.project_main-wrapper > card .hovercell .image-layer.one {
+  background-image: url(./img/享烘homePage.jpg);
+}
+
+.project_main-wrapper > card .hovercell .image-layer.two {
+  background-image: url(https://images.unsplash.com/photo-1502716643504-c4ea7b357d91?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjI0MX0&auto=format&fit=crop&w=2250&q=80);
+}
+
+.project_main-wrapper > card .hovercell .image-layer.three {
+  background-image: url(https://images.unsplash.com/photo-1542384701-9eaf70a33558?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=2250&q=80);
+}
+
+.project_main-wrapper > card .hovercell .text-layer {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  font-weight: 500;
+  text-align: center;
+  color: rgba(0, 0, 0, 0.5);
+}
+
+.project_main-wrapper > card .hovercell .text-layer .small-text {
+  font-size: 1rem;
+  width: 50%;
+  margin: 0 auto;
+  -webkit-transform: scale(2);
+          transform: scale(2);
+  opacity: 0;
+  -webkit-transition: all 0.4s cubic-bezier(0.75, 0.25, 0.15, 0.49);
+  transition: all 0.4s cubic-bezier(0.75, 0.25, 0.15, 0.49);
+}
+
+.project_main-wrapper > card .hovercell:hover .image-layer {
+  -webkit-transform: scale(1);
+          transform: scale(1);
+  opacity: 0.6;
+}
+
+.project_main-wrapper > card .hovercell:hover .small-text {
+  opacity: 1;
+  -webkit-transform: scale(1) translateY(-1rem);
+          transform: scale(1) translateY(-1rem);
 }
 
 @media all and (min-width: 960px) {
@@ -747,6 +815,75 @@
 @media all and (min-width: 480px) and (max-width: 759px) {
   .project_main-wrapper > card h4 {
     font-size: 18px;
+  }
+}
+
+.project_main-wrapper > card .img-wrapper {
+  padding: 50px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  height: 60%;
+  width: 100%;
+}
+
+.project_main-wrapper > card > .card-body h5 {
+  line-height: 24px;
+}
+
+@media all and (min-width: 960px) {
+  .project_main-wrapper > card > .card-body h5 {
+    font-size: 28px;
+  }
+}
+
+@media all and (min-width: 760px) and (max-width: 959px) {
+  .project_main-wrapper > card > .card-body h5 {
+    font-size: 24px;
+  }
+}
+
+@media all and (min-width: 480px) and (max-width: 759px) {
+  .project_main-wrapper > card > .card-body h5 {
+    font-size: 20px;
+  }
+}
+
+@media all and (min-width: 480px) and (max-width: 759px) {
+  .project_main-wrapper > card > .card-body h5 {
+    font-size: 16px;
+  }
+}
+
+.project_main-wrapper > card > .card-body p {
+  line-height: 20px;
+}
+
+@media all and (min-width: 960px) {
+  .project_main-wrapper > card > .card-body p {
+    font-size: 24px;
+  }
+}
+
+@media all and (min-width: 760px) and (max-width: 959px) {
+  .project_main-wrapper > card > .card-body p {
+    font-size: 20px;
+  }
+}
+
+@media all and (min-width: 480px) and (max-width: 759px) {
+  .project_main-wrapper > card > .card-body p {
+    font-size: 16px;
+  }
+}
+
+@media all and (min-width: 480px) and (max-width: 759px) {
+  .project_main-wrapper > card > .card-body p {
+    font-size: 12px;
   }
 }
 
