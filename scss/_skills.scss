@@ -65,15 +65,14 @@
         flex-wrap: wrap;
         list-style: none;
         position: absolute;
-        z-index: 3;
         height: 10vh;
         width: 100%;
         cursor: pointer;
         top: 90%;
         left: 4vw;
         li {
+          z-index: 2;
           font-size: 12px;
-          // @include responsive-fontSize(18, 16, 12, 8);
           width: 25%;
         }
       }

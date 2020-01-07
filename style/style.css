@@ -64,7 +64,7 @@
 
 .menu-btn {
   position: absolute;
-  z-index: 1;
+  z-index: 5;
   right: 1rem;
   top: 1rem;
   height: 20px;
@@ -132,6 +132,7 @@
   height: 100vh;
   opacity: 0.86;
   visibility: hidden;
+  z-index: 4;
 }
 
 .nav.open {
@@ -615,7 +616,6 @@
       flex-wrap: wrap;
   list-style: none;
   position: absolute;
-  z-index: 3;
   height: 10vh;
   width: 100%;
   cursor: pointer;
@@ -624,6 +624,7 @@
 }
 
 .skill_main-wrapper .skill-category li {
+  z-index: 2;
   font-size: 12px;
   width: 25%;
 }

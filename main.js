@@ -17,6 +17,7 @@ function toggleMenu() {
       item.classList.add("open");
     });
     showMenu = true;
+    $(".skill-category li").css("z-index", 0);
   } else {
     hamburger.classList.remove("open");
     nav.classList.remove("open");
@@ -25,6 +26,7 @@ function toggleMenu() {
       item.classList.remove("open");
     });
     showMenu = false;
+    $(".skill-category li").css("z-index", 2);
   }
 }
 
