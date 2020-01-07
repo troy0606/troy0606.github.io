@@ -48,7 +48,6 @@ $(".menu-nav li").click(function() {
 });
 
 let $window = $(window);
-
 function checkWidth() {
   let windowSize = $window.width();
   let bio = $(".about_bio");
@@ -69,7 +68,6 @@ function checkWidth() {
     .addClass("about_bio-lightBox");
   if (windowSize > 800) {
     $(".about_bio-lightBox").css("display", "none");
-    $(".shadow").css("display", "none");
     bio.find("p:last").css("display", "none");
     bio.find("p:first").css("display", "flex");
     $(".about_bio-hide").css({
@@ -77,18 +75,12 @@ function checkWidth() {
       top: "-100%"
     });
     $(".skill_main-wrapper card").css("display", "flex");
-    $(".skill_check").css("display", "none");
-    $(".skill-category").css("display", "none");
-    $(".skill-point").css("display", "none");
+    checkCard();
   } else {
     $(".skill_main-wrapper card").css("display", "none");
-    $(".skill_check").css("display", "block");
-    $(".skill-point").css("display", "block");
     bio.find("p:first").css("display", "none");
     $(".about_bio-lightBox").css("display", "block");
-    $(".shadow").css("display", "block");
-    $(".skill-category").css("display", "flex");
-    $(".skill_main-wrapper .chart").css("padding", "10px 5px");
+    checkCard();
     if ($(".about_bio p").length === 1) {
       bio.append(paragraphContent, paragraphLightBox);
     } else {
@@ -115,6 +107,25 @@ $(".about_bio-hide").click(() => {
     top: "-100%"
   });
 });
+
+function checkCard() {
+  if (
+    $(".skill_main-wrapper card")
+      .attr("style")
+      .indexOf("flex") > 0
+  ) {
+    $(".shadow").css("display", "none");
+    $(".skill_check").css("display", "none");
+    $(".skill-category").css("display", "none");
+    $(".skill-point").css("display", "none");
+  } else {
+    $(".skill_check").css("display", "block");
+    $(".skill-point").css("display", "block");
+    $(".shadow").css("display", "block");
+    $(".skill-category").css("display", "flex");
+    $(".skill_main-wrapper .chart").css("padding", "10px 5px");
+  }
+}
 
 let duration = 2000,
   transition = 2000;
@@ -333,7 +344,7 @@ $(".skill_main-wrapper").on("click", ".shadow path", function() {
     let skillPoint = dataset[index].count;
     $(".skill-point").text(skillPoint + " %");
     $(".skill_main-wrapper .skill_check").text(skillName);
-    $(".skill_main-wrapper path")
+    $(".skill_main-wrapper .path1")
       .not(this)
       .css({
         opacity: 0.5
@@ -363,8 +374,10 @@ $(".skill-category li").click(function() {
     }
   }
   $(".skill-point").text(`${dataset[index].count}` + " %");
-  $(".skill_main-wrapper .shadow path").css("opacity", "0.5");
-  $(".skill_main-wrapper .shadow path")
+  $(".skill_main-wrapper .shadow .path1").css("opacity", "0.5");
+  $(".skill_main-wrapper .shadow .path1")
     .eq(index)
     .css("opacity", "1");
 });
+
+checkCard();
