@@ -16,6 +16,7 @@
     }
     &-wrapper {
       margin-top: 5vh;
+      position: relative;
       flex-grow: 1;
       display: flex;
       border-radius: 10px;
@@ -50,6 +51,14 @@
             fill: #fff;
           }
         }
+      }
+      .skill-point {
+        position: absolute;
+        top: calc(50% - 10px);
+        left: calc(50% - 60px);
+        color: #fff;
+        font-size: 60px;
+        font-weight: lighter;
       }
     }
   }

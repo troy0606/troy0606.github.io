@@ -523,6 +523,7 @@
 
 .skill_main-wrapper {
   margin-top: 5vh;
+  position: relative;
   -webkit-box-flex: 1;
       -ms-flex-positive: 1;
           flex-grow: 1;
@@ -595,6 +596,15 @@
   font-family: sans-serif;
   line-height: 16rem;
   fill: #fff;
+}
+
+.skill_main-wrapper .skill-point {
+  position: absolute;
+  top: calc(50% - 10px);
+  left: calc(50% - 60px);
+  color: #fff;
+  font-size: 60px;
+  font-weight: lighter;
 }
 
 #chart-container {

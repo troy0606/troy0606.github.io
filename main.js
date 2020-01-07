@@ -325,6 +325,12 @@ $(".skill_main-wrapper").on("click", ".shadow path", function() {
     let index = $(".skill_main-wrapper .shadow path").index(this);
     let skillName = dataset[index].name;
     let skillPoint = dataset[index].count;
+    let skillSelectPoint = $(`<h6 class='skill-point'>${skillPoint} %</<h6>`);
+    if ($(".skill-point").text()) {
+      $(".skill-point").text(skillPoint + " %");
+    } else {
+      $(".skill_main-wrapper").append(skillSelectPoint);
+    }
     $(".skill_main-wrapper .skill_check").text(skillName);
     $(".skill_main-wrapper path")
       .not(this)
