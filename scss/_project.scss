@@ -110,11 +110,11 @@
             @include responsive-fontSize(22px, 20px, 18px, 16px);
           }
           p {
-            @include responsive-lineHeight(30px, 28px, 24px, 20px);
+            @include responsive-lineHeight(24px, 20px, 18px, 14px);
             @include responsive-fontSize(18px, 18px, 16px, 12px);
           }
           a {
-            @include responsive-lineHeight(18px, 16px, 14px, 14px);
+            @include responsive-lineHeight(24px, 20px, 18px, 14px);
             @include responsive-fontSize(16px, 14px, 12px, 10px);
           }
         }

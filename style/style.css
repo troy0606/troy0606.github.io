@@ -908,25 +908,25 @@
 
 @media all and (min-width: 960px) {
   .project_main-wrapper > card > .card-body p {
-    line-height: 30px;
+    line-height: 24px;
   }
 }
 
 @media all and (min-width: 760px) and (max-width: 959px) {
   .project_main-wrapper > card > .card-body p {
-    line-height: 28px;
+    line-height: 20px;
   }
 }
 
 @media all and (min-width: 480px) and (max-width: 759px) {
   .project_main-wrapper > card > .card-body p {
-    line-height: 24px;
+    line-height: 18px;
   }
 }
 
 @media all and (min-width: 0px) and (max-width: 479px) {
   .project_main-wrapper > card > .card-body p {
-    line-height: 20px;
+    line-height: 14px;
   }
 }
 
@@ -956,19 +956,19 @@
 
 @media all and (min-width: 960px) {
   .project_main-wrapper > card > .card-body a {
-    line-height: 18px;
+    line-height: 24px;
   }
 }
 
 @media all and (min-width: 760px) and (max-width: 959px) {
   .project_main-wrapper > card > .card-body a {
-    line-height: 16px;
+    line-height: 20px;
   }
 }
 
 @media all and (min-width: 480px) and (max-width: 759px) {
   .project_main-wrapper > card > .card-body a {
-    line-height: 14px;
+    line-height: 18px;
   }
 }
 
