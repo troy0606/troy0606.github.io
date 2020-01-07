@@ -66,11 +66,14 @@
         list-style: none;
         position: absolute;
         z-index: 3;
+        height: 10vh;
         width: 100%;
         cursor: pointer;
         top: 90%;
         left: 4vw;
         li {
+          font-size: 12px;
+          // @include responsive-fontSize(18, 16, 12, 8);
           width: 25%;
         }
       }
@@ -91,6 +94,7 @@
     padding-top: 10vh;
     margin: 0 auto;
     path {
+      @include transition-ease;
       cursor: pointer;
     }
   }

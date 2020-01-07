@@ -343,14 +343,26 @@ $(".skill_main-wrapper").on("click", ".shadow path", function() {
 });
 
 $(".skill-category li").click(function() {
-  let skillName = $(this).text();
-  $(".skill_main-wrapper .skill_check").text(skillName);
+  $(".skill-category li").css({
+    "font-weight": "normal",
+    color: "#fff"
+  });
+  $(this).css({
+    "font-weight": "bold",
+    color: "#ffd369"
+  });
+  $(".skill_main-wrapper .skill_check").text($(this).text());
   let index;
   for (let i = 0; i < dataset.length; i++) {
-    if (dataset[i].name === skillName) {
+    if (dataset[i].name === $(this).text()) {
       index = i;
     } else {
       continue;
     }
   }
+  $(".skill-point").text(`${dataset[index].count}` + " %");
+  $(".skill_main-wrapper .shadow path").css("opacity", "0.5");
+  $(".skill_main-wrapper .shadow path")
+    .eq(index)
+    .css("opacity", "1");
 });

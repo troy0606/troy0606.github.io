@@ -616,6 +616,7 @@
   list-style: none;
   position: absolute;
   z-index: 3;
+  height: 10vh;
   width: 100%;
   cursor: pointer;
   top: 90%;
@@ -623,6 +624,7 @@
 }
 
 .skill_main-wrapper .skill-category li {
+  font-size: 12px;
   width: 25%;
 }
 
@@ -646,6 +648,8 @@
 }
 
 #chart-container .shadow path {
+  -webkit-transition: all 0.5s ease-in-out;
+  transition: all 0.5s ease-in-out;
   cursor: pointer;
 }
 
