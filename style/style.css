@@ -274,7 +274,7 @@
   }
 }
 
-@media all and (min-width: 480px) and (max-width: 759px) {
+@media all and (min-width: 0px) and (max-width: 479px) {
   .about_bio .section-title {
     font-size: 24px;
   }
@@ -303,7 +303,7 @@
   }
 }
 
-@media all and (min-width: 480px) and (max-width: 759px) {
+@media all and (min-width: 0px) and (max-width: 479px) {
   .about_bio p {
     font-size: 14px;
   }
@@ -343,7 +343,7 @@
   }
 }
 
-@media all and (min-width: 480px) and (max-width: 759px) {
+@media all and (min-width: 0px) and (max-width: 479px) {
   .about_bio-lightBox {
     font-size: 12px;
   }
@@ -387,7 +387,7 @@
   }
 }
 
-@media all and (min-width: 480px) and (max-width: 759px) {
+@media all and (min-width: 0px) and (max-width: 479px) {
   .about_bio-exp > div h2 {
     font-size: 18px;
   }
@@ -411,7 +411,7 @@
   }
 }
 
-@media all and (min-width: 480px) and (max-width: 759px) {
+@media all and (min-width: 0px) and (max-width: 479px) {
   .about_bio-exp > div h3 {
     font-size: 14px;
   }
@@ -435,7 +435,7 @@
   }
 }
 
-@media all and (min-width: 480px) and (max-width: 759px) {
+@media all and (min-width: 0px) and (max-width: 479px) {
   .about_bio-exp > div h6 {
     font-size: 12px;
   }
@@ -517,7 +517,7 @@
   }
 }
 
-@media all and (min-width: 480px) and (max-width: 759px) {
+@media all and (min-width: 0px) and (max-width: 479px) {
   .skill_main .section-title {
     font-size: 24px;
   }
@@ -580,7 +580,7 @@
   }
 }
 
-@media all and (min-width: 480px) and (max-width: 759px) {
+@media all and (min-width: 0px) and (max-width: 479px) {
   .skill_main-wrapper > card .chart h4 {
     font-size: 18;
   }
@@ -626,8 +626,31 @@
 
 .skill_main-wrapper .skill-category li {
   z-index: 2;
-  font-size: 12px;
   width: 25%;
+}
+
+@media all and (min-width: 960px) {
+  .skill_main-wrapper .skill-category li {
+    font-size: 20px;
+  }
+}
+
+@media all and (min-width: 760px) and (max-width: 959px) {
+  .skill_main-wrapper .skill-category li {
+    font-size: 18px;
+  }
+}
+
+@media all and (min-width: 480px) and (max-width: 759px) {
+  .skill_main-wrapper .skill-category li {
+    font-size: 14px;
+  }
+}
+
+@media all and (min-width: 0px) and (max-width: 479px) {
+  .skill_main-wrapper .skill-category li {
+    font-size: 12px;
+  }
 }
 
 #chart-container {
@@ -691,7 +714,7 @@
   }
 }
 
-@media all and (min-width: 480px) and (max-width: 759px) {
+@media all and (min-width: 0px) and (max-width: 479px) {
   .project_main .section-title {
     font-size: 24px;
   }
@@ -772,12 +795,6 @@
   text-shadow: 2px 2px 2px rgba(0, 0, 0, 0.5);
 }
 
-@media all and (max-width: 800px) {
-  .project_main-wrapper > card .hovercell .text-layer {
-    top: 0%;
-  }
-}
-
 .project_main-wrapper > card .hovercell .text-layer h4 {
   color: #ffd369;
   font-weight: lighter;
@@ -807,25 +824,10 @@
   }
 }
 
-@media all and (min-width: 480px) and (max-width: 759px) {
+@media all and (min-width: 0px) and (max-width: 479px) {
   .project_main-wrapper > card .hovercell .text-layer h4 {
     font-size: 24px;
   }
-}
-
-.project_main-wrapper > card .hovercell .text-layer h4:before {
-  content: "";
-  display: block;
-  position: relative;
-  bottom: -2.56rem;
-  width: 0px;
-  -webkit-transform: translateX(-50%);
-          transform: translateX(-50%);
-  left: 50%;
-  height: 1px;
-  background-color: white;
-  -webkit-transition: all 0.3s cubic-bezier(0.75, 0.25, 0.15, 0.49);
-  transition: all 0.3s cubic-bezier(0.75, 0.25, 0.15, 0.49);
 }
 
 .project_main-wrapper > card .hovercell .text-layer .small-text {
@@ -848,11 +850,6 @@
 .project_main-wrapper > card .hovercell:hover h4 {
   -webkit-transform: scale(1.4) translateY(-2rem);
           transform: scale(1.4) translateY(-2rem);
-}
-
-.project_main-wrapper > card .hovercell:hover h4:before {
-  width: 30%;
-  background-color: white;
 }
 
 .project_main-wrapper > card .hovercell:hover .small-text {
@@ -879,7 +876,7 @@
   }
 }
 
-@media all and (min-width: 480px) and (max-width: 759px) {
+@media all and (min-width: 0px) and (max-width: 479px) {
   .project_main-wrapper > card > .card-body h5 {
     line-height: 20px;
   }
@@ -903,7 +900,7 @@
   }
 }
 
-@media all and (min-width: 480px) and (max-width: 759px) {
+@media all and (min-width: 0px) and (max-width: 479px) {
   .project_main-wrapper > card > .card-body h5 {
     font-size: 16px;
   }
@@ -927,7 +924,7 @@
   }
 }
 
-@media all and (min-width: 480px) and (max-width: 759px) {
+@media all and (min-width: 0px) and (max-width: 479px) {
   .project_main-wrapper > card > .card-body p {
     line-height: 20px;
   }
@@ -951,9 +948,57 @@
   }
 }
 
-@media all and (min-width: 480px) and (max-width: 759px) {
+@media all and (min-width: 0px) and (max-width: 479px) {
   .project_main-wrapper > card > .card-body p {
     font-size: 12px;
+  }
+}
+
+@media all and (min-width: 960px) {
+  .project_main-wrapper > card > .card-body a {
+    line-height: 18px;
+  }
+}
+
+@media all and (min-width: 760px) and (max-width: 959px) {
+  .project_main-wrapper > card > .card-body a {
+    line-height: 16px;
+  }
+}
+
+@media all and (min-width: 480px) and (max-width: 759px) {
+  .project_main-wrapper > card > .card-body a {
+    line-height: 14px;
+  }
+}
+
+@media all and (min-width: 0px) and (max-width: 479px) {
+  .project_main-wrapper > card > .card-body a {
+    line-height: 14px;
+  }
+}
+
+@media all and (min-width: 960px) {
+  .project_main-wrapper > card > .card-body a {
+    font-size: 16px;
+  }
+}
+
+@media all and (min-width: 760px) and (max-width: 959px) {
+  .project_main-wrapper > card > .card-body a {
+    font-size: 14px;
+  }
+}
+
+@media all and (min-width: 480px) and (max-width: 759px) {
+  .project_main-wrapper > card > .card-body a {
+    font-size: 12px;
+  }
+}
+
+@media all and (min-width: 0px) and (max-width: 479px) {
+  .project_main-wrapper > card > .card-body a {
+    font-size: 10px;
   }
 }
 

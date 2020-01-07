@@ -9,6 +9,7 @@ $pad-media: 760px;
 $pads-media: 759px;
 $phone-media: 480px;
 $phones-media: 479px;
+$from-media: 0px;
 
 /*把變數帶入mixin中，此mixin只就單純把media queries寫到我的mixin中，
 並且使用我上面設立的變數來調動media queries的width*/
@@ -60,7 +61,7 @@ $sectionParagraphSizePhone: 14px;
 }
 //手機
 @mixin phone-width() {
-  @media all and (max-width: $phones-media) {
+  @media all and (min-width: $from-media) and (max-width: $phones-media) {
     @content;
   }
 }
@@ -79,7 +80,7 @@ $sectionParagraphSizePhone: 14px;
     font-size: $small-pad;
   }
   //手機
-  @include small-pad-width {
+  @include phone-width {
     font-size: $phone;
   }
 }
@@ -98,7 +99,7 @@ $sectionParagraphSizePhone: 14px;
     line-height: $small-pad;
   }
   //手機
-  @include small-pad-width {
+  @include phone-width {
     line-height: $phone;
   }
 }

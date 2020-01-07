@@ -72,7 +72,7 @@
         left: 4vw;
         li {
           z-index: 2;
-          font-size: 12px;
+          @include responsive-fontSize(20px, 18px, 14px, 12px);
           width: 25%;
         }
       }
