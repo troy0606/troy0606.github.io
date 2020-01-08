@@ -679,6 +679,189 @@
   cursor: pointer;
 }
 
+.project {
+  position: relative;
+}
+
+.project_lightBox {
+  bottom: -100%;
+  background: rgba(0, 0, 0, 0.6);
+  height: 100%;
+  width: 100%;
+  left: 0;
+  position: fixed;
+  z-index: 2;
+  -webkit-transition: all 0.5s ease-in-out;
+  transition: all 0.5s ease-in-out;
+}
+
+.project_lightBox .fa-times {
+  position: absolute;
+  left: 1rem;
+  top: 1rem;
+  font-size: 30px;
+  cursor: pointer;
+}
+
+.project_lightBox .slide-container {
+  position: absolute;
+  left: 0px;
+  -webkit-transition: 0.8s;
+  transition: 0.8s;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  list-style: none;
+  /* 加上 transition變換動畫*/
+}
+
+@media all and (min-width: 960px) {
+  .project_lightBox .slide-container {
+    top: 20vh;
+  }
+}
+
+@media all and (min-width: 760px) and (max-width: 959px) {
+  .project_lightBox .slide-container {
+    top: 22vh;
+  }
+}
+
+@media all and (min-width: 480px) and (max-width: 759px) {
+  .project_lightBox .slide-container {
+    top: 25vh;
+  }
+}
+
+@media all and (min-width: 0px) and (max-width: 479px) {
+  .project_lightBox .slide-container {
+    top: 28vh;
+  }
+}
+
+.project_lightBox .slide-container li {
+  max-height: 400px;
+  -webkit-box-flex: 1;
+      -ms-flex: 1 0 0px;
+          flex: 1 0 0;
+  /* flex grow shrink width */
+}
+
+.project_lightBox .slide-container li img {
+  width: 100%;
+  height: 100%;
+  -o-object-fit: contain;
+     object-fit: contain;
+  /* 內容物根據父層來撐起 必須先下 width: 100%;
+        height: 100%;*/
+}
+
+.project_lightBox .slide-dot {
+  width: 100%;
+  position: absolute;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  list-style: none;
+  margin-right: 0px;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+@media all and (min-width: 960px) {
+  .project_lightBox .slide-dot {
+    bottom: 8vh;
+  }
+}
+
+@media all and (min-width: 760px) and (max-width: 959px) {
+  .project_lightBox .slide-dot {
+    bottom: 7vh;
+  }
+}
+
+@media all and (min-width: 480px) and (max-width: 759px) {
+  .project_lightBox .slide-dot {
+    bottom: 10vh;
+  }
+}
+
+@media all and (min-width: 0px) and (max-width: 479px) {
+  .project_lightBox .slide-dot {
+    bottom: 40vh;
+  }
+}
+
+.project_lightBox .slide-dot li {
+  height: 8px;
+  width: 4vw;
+  border: 1px solid white;
+  margin: 1vw;
+  -webkit-transition: 0.2s;
+  transition: 0.2s;
+}
+
+.project_lightBox .arrow-btn {
+  width: 30px;
+  position: absolute;
+  height: 100%;
+  top: 0;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  z-index: 2;
+}
+
+.project_lightBox .prev-arrow {
+  left: 2vw;
+}
+
+@media all and (min-width: 480px) and (max-width: 759px) {
+  .project_lightBox .prev-arrow {
+    display: none;
+  }
+}
+
+@media all and (min-width: 0px) and (max-width: 479px) {
+  .project_lightBox .prev-arrow {
+    display: none;
+  }
+}
+
+.project_lightBox .next-arrow {
+  right: 2vw;
+}
+
+@media all and (min-width: 480px) and (max-width: 759px) {
+  .project_lightBox .next-arrow {
+    display: none;
+  }
+}
+
+@media all and (min-width: 0px) and (max-width: 479px) {
+  .project_lightBox .next-arrow {
+    display: none;
+  }
+}
+
+.project_lightBox i {
+  font-size: 28px;
+  -webkit-transition: 0.3s;
+  transition: 0.3s;
+  color: rgba(255, 255, 255, 0.3);
+}
+
+.project_lightBox i:hover {
+  color: white;
+}
+
 .project_main {
   padding-top: 10vh;
   margin: 0 auto;
@@ -1006,7 +1189,7 @@ body {
   background: #263f44;
   color: #fff;
   height: 100vh;
-  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif, "微軟正黑體";
+  font-family: 'Open Sans', sans-serif, "Segoe UI", Tahoma, Geneva, Verdana, "微軟正黑體";
   line-height: 1;
 }
 

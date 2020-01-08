@@ -1,4 +1,134 @@
 .project {
+  position: relative;
+  &_lightBox {
+    bottom: -100%;
+    background: rgba($color: #000000, $alpha: 0.6);
+    height: 100%;
+    width: 100%;
+    left: 0;
+    position: fixed;
+    z-index: 2;
+    @include transition-ease;
+    .fa-times {
+      position: absolute;
+      left: 1rem;
+      top: 1rem;
+      font-size: 30px;
+      cursor: pointer;
+    }
+    .slide-container {
+      position: absolute;
+      left: 0px;
+      transition: 0.8s;
+      display: flex;
+      list-style: none;
+      @include pc-width {
+        top: 20vh;
+      }
+      //平板
+      @include pad-width {
+        top: 22vh;
+      }
+      //小平板
+      @include small-pad-width {
+        top: 25vh;
+      }
+      //手機
+      @include phone-width {
+        top: 28vh;
+      }
+      /* 加上 transition變換動畫*/
+    }
+
+    .slide-container li {
+      max-height: 400px;
+      flex: 1 0 0;
+      /* flex grow shrink width */
+    }
+
+    .slide-container li img {
+      width: 100%;
+      height: 100%;
+      object-fit: contain;
+      /* 內容物根據父層來撐起 必須先下 width: 100%;
+        height: 100%;*/
+    }
+
+    .slide-dot {
+      width: 100%;
+      position: absolute;
+      display: flex;
+      list-style: none;
+      margin-right: 0px;
+      justify-content: center;
+      @include pc-width {
+        bottom: 8vh;
+      }
+      //平板
+      @include pad-width {
+        bottom: 7vh;
+      }
+      //小平板
+      @include small-pad-width {
+        bottom: 10vh;
+      }
+      //手機
+      @include phone-width {
+        bottom: 40vh;
+      }
+    }
+
+    .slide-dot li {
+      height: 8px;
+      width: 4vw;
+      border: 1px solid white;
+      margin: 1vw;
+      transition: 0.2s;
+    }
+
+    .arrow-btn {
+      width: 30px;
+      position: absolute;
+      height: 100%;
+      top: 0;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      z-index: 2;
+    }
+
+    .prev-arrow {
+      left: 2vw;
+      @include small-pad-width {
+        display: none;
+      }
+      //手機
+      @include phone-width {
+        display: none;
+      }
+    }
+
+    .next-arrow {
+      right: 2vw;
+      @include small-pad-width {
+        display: none;
+      }
+      //手機
+      @include phone-width {
+        display: none;
+      }
+    }
+
+    i {
+      font-size: 28px;
+      transition: 0.3s;
+      color: rgba(255, 255, 255, 0.3);
+    }
+
+    i:hover {
+      color: rgba(255, 255, 255, 1);
+    }
+  }
   &_main {
     padding-top: 10vh;
     margin: 0 auto;

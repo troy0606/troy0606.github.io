@@ -335,10 +335,6 @@ createChart(
 //     });
 // };
 
-// function numberWithCommas(x) {
-//   return x.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
-// }
-
 $(".skill_main-wrapper").on("click", ".shadow path", function() {
   if ($(this).attr("class") === "path1") {
     let index = $(".skill_main-wrapper .shadow path").index(this);
@@ -392,4 +388,83 @@ $(".skill-category li").click(function() {
     .css("opacity", "1");
 });
 
-checkCard();
+$(".small-text").click(function() {
+  $(".project_lightBox").css("bottom", "0%");
+  let option = $(this).data("option");
+  projectCarousel(option);
+});
+
+function projectCarousel(option) {
+  let $slideWidth = $(".project_lightBox").width();
+  let $pic_pos = 0;
+  let slidePic = [];
+  if (option === "baking") {
+    slidePic = [
+      "享烘homePage.jpg",
+      "享烘order.jpg",
+      "享烘order2.jpg",
+      "享烘small cart.jpg",
+      "享烘small cart2.jpg"
+    ];
+  } else {
+    slidePic = [];
+  }
+
+  let $slideCount = slidePic.length;
+  $(".slide-container").css("width", $slideCount * $slideWidth);
+  $(".slide-dot li")
+    .eq(0)
+    .css("background", "white");
+  let slideContainer = "";
+  let slideBar = "";
+  slidePic.forEach(slide => {
+    slideContainer += `<li><img src="./img/${slide}" alt=""></li>`;
+    slideBar += `<li></li>`;
+  });
+  $(".slide-container").append(slideContainer);
+  $(".slide-dot").append(slideBar);
+  $(".slide-dot li").hover(
+    function() {
+      $pic_pos = $(this).index();
+      slideGo();
+    },
+    function() {
+      $(this).css("background", "none");
+    }
+  );
+
+  $(".fa-arrow-left").click(function() {
+    $pic_pos--;
+    if ($pic_pos < 0) {
+      $pic_pos = ($pic_pos % $slideCount) + $slideCount;
+    }
+    slideGo();
+  });
+
+  $(".fa-arrow-right").click(function() {
+    $pic_pos++;
+    if ($pic_pos > $slideCount - 1) {
+      $pic_pos = $pic_pos % $slideCount;
+    }
+    slideGo();
+  });
+
+  function slideGo() {
+    $(".slide-dot li")
+      .eq($pic_pos)
+      .css("background", "white")
+      .siblings()
+      .css("background", "none");
+    $(".slide-container").css("left", 0 - $pic_pos * $slideWidth);
+  }
+
+  $(window).resize(function() {
+    $slideWidth = $(".project_lightBox").width();
+    $(".slide-container").css("width", $slideCount * $slideWidth);
+    slideGo();
+  });
+}
+
+$(".project_lightBox .fa-times").click(function() {
+  $(".project_lightBox").css("bottom", "-100%");
+});
