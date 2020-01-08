@@ -423,6 +423,8 @@ function projectCarousel(option) {
     .css("background", "white");
   let slideContainer = "";
   let slideBar = "";
+  $(".slide-container").empty();
+  $(".slide-dot").empty();
   slidePic.forEach(slide => {
     slideContainer += `<li><img src="./img/${slide}" alt=""></li>`;
     slideBar += `<li></li>`;
