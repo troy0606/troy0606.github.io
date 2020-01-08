@@ -407,7 +407,13 @@ function projectCarousel(option) {
       "享烘small cart2.jpg"
     ];
   } else {
-    slidePic = [];
+    slidePic = [
+      "bake_time_homePage.jpg",
+      "bake_time_register.jpg",
+      "bake_time_login.jpg",
+      "bake_time_member.jpg",
+      "bake_time_password.jpg"
+    ];
   }
 
   let $slideCount = slidePic.length;
