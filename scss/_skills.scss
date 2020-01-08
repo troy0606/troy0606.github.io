@@ -36,7 +36,7 @@
           padding: 20px 50px;
           width: 25%;
           h4 {
-            @include responsive-fontSize(30, 26, 22, 18);
+            @include responsive-fontSize(30px, 26px, 22px, 18px);
             margin-bottom: 30px;
           }
           path.color0 {
@@ -53,10 +53,6 @@
         }
       }
       .skill-point {
-        position: absolute;
-        top: calc(50% - 10px);
-        left: calc(50% - 60px);
-        color: #fff;
         font-size: 60px;
         font-weight: lighter;
       }

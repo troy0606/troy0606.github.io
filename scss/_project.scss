@@ -9,12 +9,15 @@
     position: fixed;
     z-index: 2;
     @include transition-ease;
-    .fa-times {
+    &-close {
+      z-index: 3;
       position: absolute;
       left: 1rem;
       top: 1rem;
-      font-size: 30px;
       cursor: pointer;
+      .fa-times {
+        font-size: 30px;
+      }
     }
     .slide-container {
       position: absolute;
@@ -62,15 +65,15 @@
       margin-right: 0px;
       justify-content: center;
       @include pc-width {
-        bottom: 8vh;
+        bottom: 4vw;
       }
       //平板
       @include pad-width {
-        bottom: 7vh;
+        bottom: 10vw;
       }
       //小平板
       @include small-pad-width {
-        bottom: 10vh;
+        bottom: 30vw;
       }
       //手機
       @include phone-width {
@@ -80,10 +83,27 @@
 
     .slide-dot li {
       height: 8px;
-      width: 4vw;
       border: 1px solid white;
-      margin: 1vw;
       transition: 0.2s;
+      @include pc-width {
+        width: 4vw;
+        margin: 2vw;
+      }
+      //平板
+      @include pad-width {
+        width: 10vw;
+        margin: 4vw;
+      }
+      //小平板
+      @include small-pad-width {
+        width: 15vw;
+        margin: 6vw;
+      }
+      //手機
+      @include phone-width {
+        width: 16vw;
+        margin: 2vh;
+      }
     }
 
     .arrow-btn {
@@ -238,6 +258,12 @@
           h5 {
             @include responsive-lineHeight(30px, 28px, 24px, 20px);
             @include responsive-fontSize(22px, 20px, 18px, 16px);
+          }
+          p:first-of-type {
+            @media all and (min-width: 800px) {
+              height: 50px;
+            }
+            height: auto;
           }
           p {
             @include responsive-lineHeight(24px, 20px, 18px, 14px);

@@ -564,25 +564,25 @@
 
 @media all and (min-width: 960px) {
   .skill_main-wrapper > card .chart h4 {
-    font-size: 30;
+    font-size: 30px;
   }
 }
 
 @media all and (min-width: 760px) and (max-width: 959px) {
   .skill_main-wrapper > card .chart h4 {
-    font-size: 26;
+    font-size: 26px;
   }
 }
 
 @media all and (min-width: 480px) and (max-width: 759px) {
   .skill_main-wrapper > card .chart h4 {
-    font-size: 22;
+    font-size: 22px;
   }
 }
 
 @media all and (min-width: 0px) and (max-width: 479px) {
   .skill_main-wrapper > card .chart h4 {
-    font-size: 18;
+    font-size: 18px;
   }
 }
 
@@ -601,10 +601,6 @@
 }
 
 .skill_main-wrapper .skill-point {
-  position: absolute;
-  top: calc(50% - 10px);
-  left: calc(50% - 60px);
-  color: #fff;
   font-size: 60px;
   font-weight: lighter;
 }
@@ -695,12 +691,16 @@
   transition: all 0.5s ease-in-out;
 }
 
-.project_lightBox .fa-times {
+.project_lightBox-close {
+  z-index: 3;
   position: absolute;
   left: 1rem;
   top: 1rem;
-  font-size: 30px;
   cursor: pointer;
+}
+
+.project_lightBox-close .fa-times {
+  font-size: 30px;
 }
 
 .project_lightBox .slide-container {
@@ -771,19 +771,19 @@
 
 @media all and (min-width: 960px) {
   .project_lightBox .slide-dot {
-    bottom: 8vh;
+    bottom: 4vw;
   }
 }
 
 @media all and (min-width: 760px) and (max-width: 959px) {
   .project_lightBox .slide-dot {
-    bottom: 7vh;
+    bottom: 10vw;
   }
 }
 
 @media all and (min-width: 480px) and (max-width: 759px) {
   .project_lightBox .slide-dot {
-    bottom: 10vh;
+    bottom: 30vw;
   }
 }
 
@@ -795,11 +795,37 @@
 
 .project_lightBox .slide-dot li {
   height: 8px;
-  width: 4vw;
   border: 1px solid white;
-  margin: 1vw;
   -webkit-transition: 0.2s;
   transition: 0.2s;
+}
+
+@media all and (min-width: 960px) {
+  .project_lightBox .slide-dot li {
+    width: 4vw;
+    margin: 2vw;
+  }
+}
+
+@media all and (min-width: 760px) and (max-width: 959px) {
+  .project_lightBox .slide-dot li {
+    width: 10vw;
+    margin: 4vw;
+  }
+}
+
+@media all and (min-width: 480px) and (max-width: 759px) {
+  .project_lightBox .slide-dot li {
+    width: 15vw;
+    margin: 6vw;
+  }
+}
+
+@media all and (min-width: 0px) and (max-width: 479px) {
+  .project_lightBox .slide-dot li {
+    width: 16vw;
+    margin: 2vh;
+  }
 }
 
 .project_lightBox .arrow-btn {
@@ -1086,6 +1112,16 @@
 @media all and (min-width: 0px) and (max-width: 479px) {
   .project_main-wrapper > card > .card-body h5 {
     font-size: 16px;
+  }
+}
+
+.project_main-wrapper > card > .card-body p:first-of-type {
+  height: auto;
+}
+
+@media all and (min-width: 800px) {
+  .project_main-wrapper > card > .card-body p:first-of-type {
+    height: 50px;
   }
 }
 

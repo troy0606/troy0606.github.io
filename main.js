@@ -251,7 +251,16 @@ let innerRadiusArcShadow = innerRadiusArc - shadowWidth;
 
 let color = d3.scale
   .ordinal()
-  .range(["#41B787", "#6352B9", "#B65480", "#D5735A", "#D7D9DA"]);
+  .range([
+    "#ECB88A",
+    "#CB4042",
+    "#734338",
+    "#E98B2A",
+    "#DDA52D",
+    "#DDD23B",
+    "#838A2D",
+    "#5DAC81"
+  ]);
 
 let svg = d3
   .select("#chart-container")
@@ -321,19 +330,20 @@ createChart(
   "path2"
 );
 
-// let addText = function(text, y, size) {
-//   svg
-//     .append("text")
-//     .text(text)
-//     .attr({
-//       "text-anchor": "middle",
-//       y: y
-//     })
-//     .style({
-//       fill: "#929DAF",
-//       "font-size": size
-//     });
-// };
+let addText = function(y) {
+  svg
+    .append("text")
+    .text("Click")
+    .attr({
+      class: "skill-point",
+      "text-anchor": "middle",
+      y: y
+    })
+    .style({
+      fill: "#929DAF"
+    });
+};
+setTimeout(addText, 1000);
 
 $(".skill_main-wrapper").on("click", ".shadow path", function() {
   if ($(this).attr("class") === "path1") {
@@ -473,6 +483,6 @@ function projectCarousel(option) {
   });
 }
 
-$(".project_lightBox .fa-times").click(function() {
+$(".project_lightBox .project_lightBox-close").click(function() {
   $(".project_lightBox").css("bottom", "-100%");
 });
