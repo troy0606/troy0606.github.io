@@ -559,6 +559,7 @@
 }
 
 .skill_main-wrapper > card .chart h4 {
+  white-space: nowrap;
   margin-bottom: 30px;
 }
 
@@ -985,11 +986,11 @@
 }
 
 .project_main-wrapper > card .hovercell .image-layer.one {
-  background-image: url(../img/bake_time_homePage.jpg);
+  background-image: url(/img/享烘homePage.jpg);
 }
 
 .project_main-wrapper > card .hovercell .image-layer.two {
-  background-image: url(https://images.unsplash.com/photo-1502716643504-c4ea7b357d91?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjI0MX0&auto=format&fit=crop&w=2250&q=80);
+  background-image: url(/img/bake_time_homePage.jpg);
 }
 
 .project_main-wrapper > card .hovercell .text-layer {

@@ -201,10 +201,10 @@
             transform: scale(1.5);
             transition: all 0.4s cubic-bezier(0.75, 0.25, 0.15, 0.49);
             &.one {
-              background-image: url(../img/bake_time_homePage.jpg);
+              background-image: url(/img/享烘homePage.jpg);
             }
             &.two {
-              background-image: url(https://images.unsplash.com/photo-1502716643504-c4ea7b357d91?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjI0MX0&auto=format&fit=crop&w=2250&q=80);
+              background-image: url(/img/bake_time_homePage.jpg);
             }
           }
           .text-layer {
