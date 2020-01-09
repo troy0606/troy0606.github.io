@@ -1329,7 +1329,7 @@
 
 @media all and (max-width: 1300px) {
   .contact_main-wrapper > .container .left {
-    width: 0%;
+    display: none;
   }
 }
 
@@ -1375,7 +1375,7 @@
 
 @media all and (max-width: 1300px) {
   .contact_main-wrapper > .container .left .lower {
-    width: 0%;
+    display: none;
   }
 }
 

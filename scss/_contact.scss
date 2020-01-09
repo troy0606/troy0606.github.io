@@ -44,6 +44,9 @@
           }
           flex-direction: column;
           .upper {
+            @media all and (max-width: 1300px) {
+              display: none;
+            }
             height: 50%;
             width: 100%;
             position: relative;
@@ -64,6 +67,9 @@
             }
           }
           .lower {
+            @media all and (max-width: 1300px) {
+              display: none;
+            }
             width: 100%;
             flex-grow: 1;
             display: flex;
