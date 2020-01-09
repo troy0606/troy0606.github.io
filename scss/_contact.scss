@@ -38,6 +38,9 @@
           background-color: #fff;
           border-radius: 5px;
           display: flex;
+          @media all and (max-width: 800px) {
+            display: none;
+          }
           flex-direction: column;
           .upper {
             height: 50%;

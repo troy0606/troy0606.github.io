@@ -1325,6 +1325,12 @@
           flex-direction: column;
 }
 
+@media all and (max-width: 800px) {
+  .contact_main-wrapper > .container .left {
+    display: none;
+  }
+}
+
 .contact_main-wrapper > .container .left .upper {
   height: 50%;
   width: 100%;
