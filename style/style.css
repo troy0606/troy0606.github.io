@@ -1174,52 +1174,68 @@
   }
 }
 
-@media all and (min-width: 960px) {
-  .project_main-wrapper > card > .card-body a {
-    line-height: 24px;
-  }
+.project_main-wrapper > card > .card-body a {
+  padding: 1px 3px;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  border-radius: 10px;
+  background-color: #dda52d;
+  opacity: 0.8;
+  -webkit-transition: all 0.5s ease-in-out;
+  transition: all 0.5s ease-in-out;
 }
 
-@media all and (min-width: 760px) and (max-width: 959px) {
+@media all and (min-width: 960px) {
   .project_main-wrapper > card > .card-body a {
     line-height: 20px;
   }
 }
 
-@media all and (min-width: 480px) and (max-width: 759px) {
+@media all and (min-width: 760px) and (max-width: 959px) {
   .project_main-wrapper > card > .card-body a {
     line-height: 18px;
   }
 }
 
-@media all and (min-width: 0px) and (max-width: 479px) {
+@media all and (min-width: 480px) and (max-width: 759px) {
   .project_main-wrapper > card > .card-body a {
     line-height: 14px;
   }
 }
 
-@media all and (min-width: 960px) {
+@media all and (min-width: 0px) and (max-width: 479px) {
   .project_main-wrapper > card > .card-body a {
-    font-size: 16px;
+    line-height: 12px;
   }
 }
 
-@media all and (min-width: 760px) and (max-width: 959px) {
+@media all and (min-width: 960px) {
   .project_main-wrapper > card > .card-body a {
     font-size: 14px;
   }
 }
 
-@media all and (min-width: 480px) and (max-width: 759px) {
+@media all and (min-width: 760px) and (max-width: 959px) {
   .project_main-wrapper > card > .card-body a {
     font-size: 12px;
   }
 }
 
-@media all and (min-width: 0px) and (max-width: 479px) {
+@media all and (min-width: 480px) and (max-width: 759px) {
   .project_main-wrapper > card > .card-body a {
     font-size: 10px;
   }
+}
+
+@media all and (min-width: 0px) and (max-width: 479px) {
+  .project_main-wrapper > card > .card-body a {
+    font-size: 8px;
+  }
+}
+
+.project_main-wrapper > card > .card-body a:hover {
+  background-color: #e98b2a;
+  opacity: 1;
 }
 
 body {

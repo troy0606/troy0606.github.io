@@ -270,8 +270,18 @@
             @include responsive-fontSize(18px, 18px, 16px, 12px);
           }
           a {
-            @include responsive-lineHeight(24px, 20px, 18px, 14px);
-            @include responsive-fontSize(16px, 14px, 12px, 10px);
+            padding: 1px 3px;
+            box-sizing: border-box;
+            border-radius: 10px;
+            background-color: #dda52d;
+            opacity: 0.8;
+            @include responsive-lineHeight(20px, 18px, 14px, 12px);
+            @include responsive-fontSize(14px, 12px, 10px, 8px);
+            @include transition-ease;
+            &:hover {
+              background-color: #e98b2a;
+              opacity: 1;
+            }
           }
         }
       }
