@@ -1319,15 +1319,17 @@
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
+  -webkit-transition: all 0.5s ease-in-out;
+  transition: all 0.5s ease-in-out;
   -webkit-box-orient: vertical;
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
 }
 
-@media all and (max-width: 800px) {
+@media all and (max-width: 1300px) {
   .contact_main-wrapper > .container .left {
-    display: none;
+    width: 0%;
   }
 }
 
@@ -1336,6 +1338,12 @@
   width: 100%;
   position: relative;
   border-bottom: 10px solid #015668;
+}
+
+@media all and (max-width: 1300px) {
+  .contact_main-wrapper > .container .left .upper {
+    display: none;
+  }
 }
 
 .contact_main-wrapper > .container .left .upper figure {
@@ -1363,6 +1371,12 @@
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
+}
+
+@media all and (max-width: 1300px) {
+  .contact_main-wrapper > .container .left .lower {
+    width: 0%;
+  }
 }
 
 .contact_main-wrapper > .container .left .lower p {
@@ -1401,6 +1415,12 @@
           perspective: 1000px;
 }
 
+@media all and (max-width: 600px) {
+  .contact_main-wrapper > .container .right > .contact_card {
+    width: 100%;
+  }
+}
+
 .contact_main-wrapper > .container .right > .contact_card:hover .contact_card-wrapper {
   -webkit-transform: rotateY(180deg);
           transform: rotateY(180deg);
@@ -1419,6 +1439,9 @@
 }
 
 .contact_main-wrapper > .container .right > .contact_card .contact_card-wrapper > div {
+  border-radius: 5px;
+  -webkit-box-shadow: 3px 3px 0 5px rgba(1, 86, 104, 0.4);
+          box-shadow: 3px 3px 0 5px rgba(1, 86, 104, 0.4);
   position: absolute;
   top: 0px;
   left: 0px;
@@ -1437,8 +1460,28 @@
           align-items: center;
 }
 
-.contact_main-wrapper > .container .right > .contact_card .contact_card-wrapper > div p {
-  font-size: 25px;
+@media all and (min-width: 960px) {
+  .contact_main-wrapper > .container .right > .contact_card .contact_card-wrapper > div p {
+    font-size: 25px;
+  }
+}
+
+@media all and (min-width: 760px) and (max-width: 959px) {
+  .contact_main-wrapper > .container .right > .contact_card .contact_card-wrapper > div p {
+    font-size: 18px;
+  }
+}
+
+@media all and (min-width: 480px) and (max-width: 759px) {
+  .contact_main-wrapper > .container .right > .contact_card .contact_card-wrapper > div p {
+    font-size: 16px;
+  }
+}
+
+@media all and (min-width: 0px) and (max-width: 479px) {
+  .contact_main-wrapper > .container .right > .contact_card .contact_card-wrapper > div p {
+    font-size: 20px;
+  }
 }
 
 .contact_main-wrapper > .container .right > .contact_card .contact_card-wrapper > div i {

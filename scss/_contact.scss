@@ -38,7 +38,8 @@
           background-color: #fff;
           border-radius: 5px;
           display: flex;
-          @media all and (max-width: 800px) {
+          @include transition-ease;
+          @media all and (max-width: 1300px) {
             display: none;
           }
           flex-direction: column;
@@ -86,19 +87,23 @@
           flex-wrap: wrap;
           > .contact_card {
             width: 50%;
+            @media all and (max-width: 600px) {
+              width: 100%;
+            }
             perspective: 1000px;
             &:hover .contact_card-wrapper {
               transform: rotateY(180deg);
             }
             .contact_card-wrapper {
               box-sizing: border-box;
-              //   border: 2px solid white;
               @include transition-ease;
               transform-style: preserve-3d;
               position: relative;
               width: 100%;
               height: 100%;
               > div {
+                border-radius: 5px;
+                box-shadow: 3px 3px 0 5px rgba($tertiary-color, 0.4);
                 position: absolute;
                 top: 0px;
                 left: 0px;
@@ -109,7 +114,7 @@
                 justify-content: center;
                 align-items: center;
                 p {
-                  font-size: 25px;
+                  @include responsive-fontSize(25px, 18px, 16px, 20px);
                 }
                 i {
                   font-size: 50px;
