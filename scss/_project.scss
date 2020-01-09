@@ -275,7 +275,7 @@
             border-radius: 10px;
             background-color: #dda52d;
             opacity: 0.8;
-            @include responsive-lineHeight(20px, 18px, 14px, 12px);
+            @include responsive-lineHeight(22px, 20px, 16px, 14px);
             @include responsive-fontSize(14px, 12px, 10px, 8px);
             @include transition-ease;
             &:hover {

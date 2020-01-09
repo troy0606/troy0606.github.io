@@ -1187,25 +1187,25 @@
 
 @media all and (min-width: 960px) {
   .project_main-wrapper > card > .card-body a {
-    line-height: 20px;
+    line-height: 22px;
   }
 }
 
 @media all and (min-width: 760px) and (max-width: 959px) {
   .project_main-wrapper > card > .card-body a {
-    line-height: 18px;
+    line-height: 20px;
   }
 }
 
 @media all and (min-width: 480px) and (max-width: 759px) {
   .project_main-wrapper > card > .card-body a {
-    line-height: 14px;
+    line-height: 16px;
   }
 }
 
 @media all and (min-width: 0px) and (max-width: 479px) {
   .project_main-wrapper > card > .card-body a {
-    line-height: 12px;
+    line-height: 14px;
   }
 }
 
@@ -1238,11 +1238,72 @@
   opacity: 1;
 }
 
+.contact_main {
+  padding-top: 5vh;
+  margin: 0 auto;
+  width: 80%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+.contact_main .section-title {
+  color: #ffd369;
+}
+
+@media all and (min-width: 960px) {
+  .contact_main .section-title {
+    font-size: 40px;
+  }
+}
+
+@media all and (min-width: 760px) and (max-width: 959px) {
+  .contact_main .section-title {
+    font-size: 30px;
+  }
+}
+
+@media all and (min-width: 480px) and (max-width: 759px) {
+  .contact_main .section-title {
+    font-size: 26px;
+  }
+}
+
+@media all and (min-width: 0px) and (max-width: 479px) {
+  .contact_main .section-title {
+    font-size: 24px;
+  }
+}
+
+.contact_main-wrapper {
+  margin-top: 2vh;
+  position: relative;
+  -webkit-box-flex: 1;
+      -ms-flex-positive: 1;
+          flex-grow: 1;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  border-radius: 10px;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  width: 100%;
+  background: -webkit-gradient(linear, left top, right top, from(rgba(1, 86, 104, 0.8)), to(rgba(1, 86, 104, 0.1)));
+  background: linear-gradient(to right, rgba(1, 86, 104, 0.8), rgba(1, 86, 104, 0.1));
+  background-size: cover;
+}
+
 body {
   background: #263f44;
   color: #fff;
   height: 100vh;
-  font-family: 'Open Sans', sans-serif, "Segoe UI", Tahoma, Geneva, Verdana, "微軟正黑體";
+  font-family: "Open Sans", sans-serif, "Segoe UI", Tahoma, Geneva, Verdana, "微軟正黑體";
   line-height: 1;
 }
 
