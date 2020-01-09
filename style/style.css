@@ -35,6 +35,10 @@
   font-weight: 700;
 }
 
+.social-icons {
+  z-index: 3;
+}
+
 .slide {
   position: absolute;
   top: 40vh;
