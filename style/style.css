@@ -1303,6 +1303,70 @@
   background-size: cover;
 }
 
+.contact_main-wrapper > .container {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  width: 100%;
+  padding: 10px 15px;
+  height: 100%;
+}
+
+.contact_main-wrapper > .container .left {
+  width: 40%;
+  background-color: rgba(255, 255, 255, 0.6);
+  border-radius: 5px;
+}
+
+.contact_main-wrapper > .container .right {
+  -webkit-box-flex: 1;
+      -ms-flex-positive: 1;
+          flex-grow: 1;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  -webkit-perspective: 500px;
+          perspective: 500px;
+}
+
+.contact_main-wrapper > .container .right > .contact_card {
+  position: relative;
+  width: 50%;
+  -webkit-transition: all 0.5s ease-in-out;
+  transition: all 0.5s ease-in-out;
+  -webkit-transform-style: preserve-3d;
+          transform-style: preserve-3d;
+}
+
+.contact_main-wrapper > .container .right > .contact_card:hover {
+  -webkit-transform: rotateY(180deg);
+          transform: rotateY(180deg);
+}
+
+.contact_main-wrapper > .container .right > .contact_card > div {
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  width: 100%;
+  height: 100%;
+  background-color: #000;
+  -webkit-backface-visibility: hidden;
+          backface-visibility: hidden;
+}
+
+.contact_main-wrapper > .container .right > .contact_card .back {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  background-color: #fff;
+  -webkit-transform: rotateY(180deg);
+          transform: rotateY(180deg);
+}
+
 body {
   background: #263f44;
   color: #fff;
