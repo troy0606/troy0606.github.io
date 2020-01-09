@@ -1314,8 +1314,67 @@
 
 .contact_main-wrapper > .container .left {
   width: 30%;
-  background-color: rgba(255, 255, 255, 0.6);
+  background-color: #fff;
   border-radius: 5px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+.contact_main-wrapper > .container .left .upper {
+  height: 50%;
+  width: 100%;
+  position: relative;
+  border-bottom: 10px solid #015668;
+}
+
+.contact_main-wrapper > .container .left .upper figure {
+  position: absolute;
+  overflow: hidden;
+  top: calc(50% - 75px);
+  right: calc(50% - 75px);
+  height: 150px;
+  width: 150px;
+  border-radius: 50%;
+}
+
+.contact_main-wrapper > .container .left .upper figure img {
+  -o-object-fit: cover;
+     object-fit: cover;
+  width: 100%;
+  height: 100%;
+}
+
+.contact_main-wrapper > .container .left .lower {
+  width: 100%;
+  -webkit-box-flex: 1;
+      -ms-flex-positive: 1;
+          flex-grow: 1;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.contact_main-wrapper > .container .left .lower p {
+  height: 60%;
+  width: 80%;
+  text-align: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -ms-flex-item-align: center;
+      -ms-grid-row-align: center;
+      align-self: center;
+  color: #000;
+  line-height: 2rem;
+  font-size: 1.5rem;
+  -webkit-box-flex: 1;
+      -ms-flex-positive: 1;
+          flex-grow: 1;
 }
 
 .contact_main-wrapper > .container .right {
@@ -1344,7 +1403,6 @@
 .contact_main-wrapper > .container .right > .contact_card .contact_card-wrapper {
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
-  border: 2px solid white;
   -webkit-transition: all 0.5s ease-in-out;
   transition: all 0.5s ease-in-out;
   -webkit-transform-style: preserve-3d;
@@ -1362,6 +1420,19 @@
   height: 100%;
   -webkit-backface-visibility: hidden;
           backface-visibility: hidden;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.contact_main-wrapper > .container .right > .contact_card .contact_card-wrapper > div p {
+  font-size: 25px;
 }
 
 .contact_main-wrapper > .container .right > .contact_card .contact_card-wrapper > div i {
