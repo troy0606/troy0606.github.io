@@ -17,8 +17,8 @@
       -ms-flex-align: center;
           align-items: center;
   text-align: right;
-  background: -webkit-gradient(linear, left top, right top, from(rgba(38, 63, 68, 0.5)), to(rgba(38, 63, 68, 0.1))), url("/img/2nd date in Japan 👫🌻_200105_0134.jpg") center center;
-  background: linear-gradient(to right, rgba(38, 63, 68, 0.5), rgba(38, 63, 68, 0.1)), url("/img/2nd date in Japan 👫🌻_200105_0134.jpg") center center;
+  background: -webkit-gradient(linear, left top, right top, from(rgba(38, 63, 68, 0.5)), to(rgba(38, 63, 68, 0.1))), url("/img/6th date In Japan👫🌱🐚_200109_0014.jpg") center center;
+  background: linear-gradient(to right, rgba(38, 63, 68, 0.5), rgba(38, 63, 68, 0.1)), url("/img/6th date In Japan👫🌱🐚_200109_0014.jpg") center center;
   background-size: cover;
   background-repeat: no-repeat;
 }
@@ -672,6 +672,12 @@
           flex-grow: 1;
   padding-top: 10vh;
   margin: 0 auto;
+}
+
+@media all and (min-width: 800px) {
+  #chart-container .shadow {
+    display: none;
+  }
 }
 
 #chart-container .shadow path {
@@ -1480,7 +1486,7 @@
 
 @media all and (min-width: 0px) and (max-width: 479px) {
   .contact_main-wrapper > .container .right > .contact_card .contact_card-wrapper > div p {
-    font-size: 20px;
+    font-size: 18px;
   }
 }
 

@@ -120,7 +120,7 @@
                 justify-content: center;
                 align-items: center;
                 p {
-                  @include responsive-fontSize(25px, 18px, 16px, 20px);
+                  @include responsive-fontSize(25px, 18px, 16px, 18px);
                 }
                 i {
                   font-size: 50px;
