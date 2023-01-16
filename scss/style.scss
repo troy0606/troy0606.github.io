@@ -34,7 +34,7 @@ a {
 }
 
 section {
-  height: 100vh;
+  min-height: 100vh;
   width: 100%;
 }
 header {
@@ -69,4 +69,8 @@ main {
 
 ::-webkit-scrollbar {
   display: none;
+}
+
+li {
+  list-style: none;
 }

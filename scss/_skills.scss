@@ -1,4 +1,7 @@
 .skill {
+  @media all and (max-width: 799px) {
+    height: 100vh;
+  }
   &_main {
     padding-top: 5vh;
     margin: 0 auto;

@@ -13,7 +13,7 @@ function toggleMenu() {
     hamburger.classList.add("open");
     nav.classList.add("open");
     menuNav.classList.add("open");
-    navItem.forEach(item => {
+    navItem.forEach((item) => {
       item.classList.add("open");
     });
     showMenu = true;
@@ -22,7 +22,7 @@ function toggleMenu() {
     hamburger.classList.remove("open");
     nav.classList.remove("open");
     menuNav.classList.remove("open");
-    navItem.forEach(item => {
+    navItem.forEach((item) => {
       item.classList.remove("open");
     });
     showMenu = false;
@@ -30,18 +30,12 @@ function toggleMenu() {
   }
 }
 
-$(".menu-nav li").click(function() {
-  $(this)
-    .addClass("active")
-    .siblings()
-    .removeClass("active");
-  const point = $(this)
-    .find("a")
-    .text()
-    .toLowerCase();
+$(".menu-nav li").click(function () {
+  $(this).addClass("active").siblings().removeClass("active");
+  const point = $(this).find("a").text().toLowerCase();
   $("html,body").animate(
     {
-      scrollTop: $("." + point).offset().top
+      scrollTop: $("." + point).offset().top,
     },
     700
   );
@@ -72,7 +66,7 @@ function checkWidth() {
     bio.find("p:first").css("display", "flex");
     $(".about_bio-hide").css({
       opacity: 0,
-      top: "-100%"
+      top: "-100%",
     });
     $(".skill_main-wrapper card").css("display", "flex");
     checkCard();
@@ -96,7 +90,7 @@ $(window).resize(checkWidth);
 $(".about_bio").on("click", ".about_bio-lightBox", () => {
   $(".about_bio-hide").css({
     opacity: 1,
-    top: "0%"
+    top: "0%",
   });
   $(".skill-category li").css("z-index", 0);
 });
@@ -105,17 +99,13 @@ $(".about_bio-hide").click(() => {
   event.stopPropagation();
   $(".about_bio-hide").css({
     opacity: 0,
-    top: "-100%"
+    top: "-100%",
   });
   $(".skill-category li").css("z-index", 2);
 });
 
 function checkCard() {
-  if (
-    $(".skill_main-wrapper card")
-      .attr("style")
-      .indexOf("flex") > 0
-  ) {
+  if ($(".skill_main-wrapper card").attr("style").indexOf("flex") > 0) {
     $(".shadow").css("display", "none");
     $(".skill_check").css("display", "none");
     $(".skill-category").css("display", "none");
@@ -131,20 +121,15 @@ function checkCard() {
 
 let duration = 2000,
   transition = 2000;
-drawDonutChart("#html5", $("#html5").data("percent"), 160, 160, ".20em");
-drawDonutChart("#css3", $("#css3").data("percent"), 160, 160, ".20em");
-drawDonutChart(
-  "#javascript",
-  $("#javascript").data("percent"),
-  160,
-  160,
-  ".20em"
-);
-drawDonutChart("#jquery", $("#jquery").data("percent"), 160, 160, ".20em");
-drawDonutChart("#react-js", $("#react-js").data("percent"), 160, 160, ".20em");
-drawDonutChart("#mysql", $("#mysql").data("percent"), 160, 160, ".20em");
-drawDonutChart("#php", $("#php").data("percent"), 160, 160, ".20em");
-drawDonutChart("#nodejs", $("#nodejs").data("percent"), 160, 160, ".20em");
+
+const skillChartsDoms$ = $("#chart-container .chart");
+
+if (skillChartsDoms$.length) {
+  skillChartsDoms$.each(function () {
+    drawDonutChart(this, $(this).data("percent"), 160, 160, ".20em");
+  });
+}
+
 $(".skill_main-wrapper .chart").css("padding", "20px 50px");
 
 function drawDonutChart(element, percent, width, height, text_y) {
@@ -154,7 +139,7 @@ function drawDonutChart(element, percent, width, height, text_y) {
 
   let dataset = {
       lower: calcPercent(0),
-      upper: calcPercent(percent)
+      upper: calcPercent(percent),
     },
     radius = Math.min(width, height) / 2,
     pie = d3.layout.pie().sort(null),
@@ -178,11 +163,11 @@ function drawDonutChart(element, percent, width, height, text_y) {
     .data(pie(dataset.lower))
     .enter()
     .append("path")
-    .attr("class", function(d, i) {
+    .attr("class", function (d, i) {
       return "color" + i;
     })
     .attr("d", arc)
-    .each(function(d) {
+    .each(function (d) {
       this._current = d;
     }); // store the initial values
 
@@ -195,20 +180,20 @@ function drawDonutChart(element, percent, width, height, text_y) {
     text.text(percent);
   } else {
     let progress = 0;
-    let timeout = setTimeout(function() {
+    let timeout = setTimeout(function () {
       clearTimeout(timeout);
       path = path.data(pie(dataset.upper)); // update the data
       path
         .transition()
         .duration(duration)
-        .attrTween("d", function(a) {
+        .attrTween("d", function (a) {
           // Store the displayed angles in _current.
           // Then, interpolate from _current to the new angles.
           // During the transition, _current is updated in-place by d3.interpolate.
           let i = d3.interpolate(this._current, a);
           let i2 = d3.interpolate(progress, percent);
           this._current = i(0);
-          return function(t) {
+          return function (t) {
             text.text(format(i2(t) / 100));
             return arc(i(t));
           };
@@ -221,20 +206,13 @@ function calcPercent(percent) {
   return [percent, 100 - percent];
 }
 
-let dataset = [
-  { name: "HTML5", count: 60 },
-  { name: "CSS3", count: 50 },
-  { name: "JAVASCRIPT", count: 60 },
-  { name: "JQuery", count: 50 },
-  { name: "REACT JS", count: 50 },
-  { name: "My SQL", count: 30 },
-  { name: "NodeJS", count: 40 },
-  { name: "PHP", count: 30 }
-];
+let skillChartsDoms = [...skillChartsDoms$];
+
+let dataset = skillChartsDoms.map((skillChartDom)=> ({ name: skillChartDom?.id, count: skillChartDom?.dataset?.percent}));
 
 let pie = d3.layout
   .pie()
-  .value(function(d) {
+  .value(function (d) {
     return d.count;
   })
   .sort(null);
@@ -259,7 +237,7 @@ let color = d3.scale
     "#DDA52D",
     "#DDD23B",
     "#838A2D",
-    "#5DAC81"
+    "#5DAC81",
   ]);
 
 let svg = d3
@@ -268,24 +246,21 @@ let svg = d3
   .attr({
     width: w,
     height: h,
-    class: "shadow"
+    class: "shadow",
   })
   .append("g")
   .attr({
-    transform: "translate(" + w / 2 + "," + h / 2 + ")"
+    transform: "translate(" + w / 2 + "," + h / 2 + ")",
   });
 
-let createChart = function(
+let createChart = function (
   svg,
   outerRadius,
   innerRadius,
   fillFunction,
   className
 ) {
-  let arc = d3.svg
-    .arc()
-    .innerRadius(outerRadius)
-    .outerRadius(innerRadius);
+  let arc = d3.svg.arc().innerRadius(outerRadius).outerRadius(innerRadius);
 
   let path = svg
     .selectAll("." + className)
@@ -295,15 +270,15 @@ let createChart = function(
     .attr({
       class: className,
       d: arc,
-      fill: fillFunction
+      fill: fillFunction,
     });
 
   path
     .transition()
     .duration(1000)
-    .attrTween("d", function(d) {
+    .attrTween("d", function (d) {
       let interpolate = d3.interpolate({ startAngle: 0, endAngle: 0 }, d);
-      return function(t) {
+      return function (t) {
         return arc(interpolate(t));
       };
     });
@@ -313,7 +288,7 @@ createChart(
   svg,
   outerRadiusArc,
   innerRadiusArc,
-  function(d, i) {
+  function (d, i) {
     return color(d.data.name);
   },
   "path1"
@@ -323,64 +298,60 @@ createChart(
   svg,
   outerRadiusArcShadow,
   innerRadiusArcShadow,
-  function(d, i) {
+  function (d, i) {
     let c = d3.hsl(color(d.data.name));
     return d3.hsl(c.h + 5, c.s - 0.07, c.l - 0.15);
   },
   "path2"
 );
 
-let addText = function(y) {
+let addText = function (y) {
   svg
     .append("text")
     .text("Click")
     .attr({
       class: "skill-point",
       "text-anchor": "middle",
-      y: y
+      y: y,
     })
     .style({
-      fill: "#929DAF"
+      fill: "#929DAF",
     });
 };
 setTimeout(addText, 1000);
 
-$(".skill_main-wrapper").on("click", ".shadow path", function() {
+$(".skill_main-wrapper").on("click", ".shadow path", function () {
   if ($(this).attr("class") === "path1") {
     let index = $(".skill_main-wrapper .shadow path").index(this);
     let skillName = dataset[index].name;
     let skillPoint = dataset[index].count;
     $(".skill-point").text(skillPoint + " %");
     $(".skill_main-wrapper .skill_check").text(skillName);
-    $(".skill_main-wrapper .path1")
-      .not(this)
-      .css({
-        opacity: 0.5
-      });
+    $(".skill_main-wrapper .path1").not(this).css({
+      opacity: 0.5,
+    });
     $(this).css({
-      opacity: 1
+      opacity: 1,
     });
     $(".skill-category li").css({
       "font-weight": "normal",
-      color: "#fff"
+      color: "#fff",
     });
-    $(".skill-category li")
-      .eq(index)
-      .css({
-        "font-weight": "bold",
-        color: "#ffd369"
-      });
+    $(".skill-category li").eq(index).css({
+      "font-weight": "bold",
+      color: "#ffd369",
+    });
   }
 });
 
-$(".skill-category li").click(function() {
+$(".skill-category li").click(function () {
   $(".skill-category li").css({
     "font-weight": "normal",
-    color: "#fff"
+    color: "#fff",
   });
   $(this).css({
     "font-weight": "bold",
-    color: "#ffd369"
+    color: "#ffd369",
   });
   $(".skill_main-wrapper .skill_check").text($(this).text());
   let index;
@@ -393,12 +364,10 @@ $(".skill-category li").click(function() {
   }
   $(".skill-point").text(`${dataset[index].count}` + " %");
   $(".skill_main-wrapper .shadow .path1").css("opacity", "0.5");
-  $(".skill_main-wrapper .shadow .path1")
-    .eq(index)
-    .css("opacity", "1");
+  $(".skill_main-wrapper .shadow .path1").eq(index).css("opacity", "1");
 });
 
-$(".small-text").click(function() {
+$(".small-text").click(function () {
   $(".project_lightBox").css("bottom", "0%");
   let option = $(this).data("option");
   projectCarousel(option);
@@ -414,7 +383,7 @@ function projectCarousel(option) {
       "享烘order.jpg",
       "享烘order2.jpg",
       "享烘small cart.jpg",
-      "享烘small cart2.jpg"
+      "享烘small cart2.jpg",
     ];
   } else {
     slidePic = [
@@ -422,36 +391,34 @@ function projectCarousel(option) {
       "bake_time_register.jpg",
       "bake_time_login.jpg",
       "bake_time_member.jpg",
-      "bake_time_password.jpg"
+      "bake_time_password.jpg",
     ];
   }
 
   let $slideCount = slidePic.length;
   $(".slide-container").css("width", $slideCount * $slideWidth);
-  $(".slide-dot li")
-    .eq(0)
-    .css("background", "white");
+  $(".slide-dot li").eq(0).css("background", "white");
   let slideContainer = "";
   let slideBar = "";
   $(".slide-container").empty();
   $(".slide-dot").empty();
-  slidePic.forEach(slide => {
+  slidePic.forEach((slide) => {
     slideContainer += `<li><img src="./img/${slide}" alt=""></li>`;
     slideBar += `<li></li>`;
   });
   $(".slide-container").append(slideContainer);
   $(".slide-dot").append(slideBar);
   $(".slide-dot li").hover(
-    function() {
+    function () {
       $pic_pos = $(this).index();
       slideGo();
     },
-    function() {
+    function () {
       $(this).css("background", "none");
     }
   );
 
-  $(".fa-arrow-left").click(function() {
+  $(".fa-arrow-left").click(function () {
     $pic_pos--;
     if ($pic_pos < 0) {
       $pic_pos = ($pic_pos % $slideCount) + $slideCount;
@@ -459,7 +426,7 @@ function projectCarousel(option) {
     slideGo();
   });
 
-  $(".fa-arrow-right").click(function() {
+  $(".fa-arrow-right").click(function () {
     $pic_pos++;
     if ($pic_pos > $slideCount - 1) {
       $pic_pos = $pic_pos % $slideCount;
@@ -476,13 +443,13 @@ function projectCarousel(option) {
     $(".slide-container").css("left", 0 - $pic_pos * $slideWidth);
   }
 
-  $(window).resize(function() {
+  $(window).resize(function () {
     $slideWidth = $(".project_lightBox").width();
     $(".slide-container").css("width", $slideCount * $slideWidth);
     slideGo();
   });
 }
 
-$(".project_lightBox .project_lightBox-close").click(function() {
+$(".project_lightBox .project_lightBox-close").click(function () {
   $(".project_lightBox").css("bottom", "-100%");
 });

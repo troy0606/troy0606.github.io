@@ -1,0 +1,1243 @@
+@charset "UTF-8";
+/*把變數帶入mixin中，此mixin只就單純把media queries寫到我的mixin中，
+並且使用我上面設立的變數來調動media queries的width*/
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+.home {
+  position: relative;
+  font-family: "Playfair Display", serif;
+  height: 100%;
+  overflow: hidden;
+  align-items: center;
+  text-align: right;
+  background: linear-gradient(to right, rgba(38, 63, 68, 0.5), rgba(38, 63, 68, 0.1)), url("/img/6th date In Japan👫🌱🐚_200109_0014.jpg") center center;
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+.home_name {
+  font-size: 5rem;
+  padding-bottom: 1rem;
+  margin-bottom: 1rem;
+  border-bottom: 1px solid #fff;
+}
+.home_name--last {
+  color: #ffd369;
+  font-weight: 700;
+}
+
+.social-icons {
+  z-index: 3;
+}
+
+.slide {
+  position: absolute;
+  top: 40vh;
+  height: 100%;
+  width: 100%;
+  -webkit-animation: slide 3s 1s 1 normal both;
+          animation: slide 3s 1s 1 normal both;
+}
+
+@-webkit-keyframes slide {
+  from {
+    left: -100%;
+  }
+  to {
+    left: 0%;
+  }
+}
+
+@keyframes slide {
+  from {
+    left: -100%;
+  }
+  to {
+    left: 0%;
+  }
+}
+.menu-btn {
+  position: absolute;
+  z-index: 5;
+  right: 1rem;
+  top: 1rem;
+  height: 20px;
+  width: 28px;
+  cursor: pointer;
+  transition: all 0.5s ease-in-out;
+}
+.menu-btn_burger {
+  position: absolute;
+  right: 0;
+  top: 0.5rem;
+  width: 28px;
+  height: 3px;
+  background: #fff;
+  transition: all 0.5s ease-in-out;
+}
+.menu-btn_burger::before {
+  content: "";
+  position: absolute;
+  top: -8px;
+  width: 28px;
+  height: 3px;
+  background: #fff;
+  transition: all 0.5s ease-in-out;
+}
+.menu-btn_burger::after {
+  content: "";
+  position: absolute;
+  top: 8px;
+  width: 20px;
+  height: 3px;
+  background: #fff;
+  transition: all 0.5s ease-in-out;
+}
+.menu-btn_burger.open {
+  transform: rotate(720deg);
+  background: transparent;
+}
+.menu-btn_burger.open::before {
+  transform: rotate(45deg) translate(5px, 8px);
+}
+.menu-btn_burger.open::after {
+  width: 28px;
+  transform: rotate(-45deg) translate(3px, -7px);
+}
+
+.nav {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  opacity: 0.86;
+  visibility: hidden;
+  z-index: 4;
+}
+.nav.open {
+  visibility: visible;
+}
+.nav .menu-nav {
+  display: flex;
+  flex-flow: column wrap;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  overflow: hidden;
+  background: #263f44;
+  list-style: none;
+  padding-right: 1rem;
+  transform: translateY(-100%);
+  transition: all 0.5s ease-in-out;
+}
+.nav .menu-nav.open {
+  transform: translateY(0);
+}
+.nav .menu-nav_item {
+  transform: translateX(100vw);
+  transition: all 0.5s ease-in-out;
+}
+.nav .menu-nav_item.open {
+  transform: translateX(0);
+}
+.nav .menu-nav_item.active > a {
+  color: #ffd369;
+}
+.nav .menu-nav_link {
+  display: inline-block;
+  font-size: 2rem;
+  text-transform: uppercase;
+  padding: 2rem 0;
+  font-weight: 300;
+  cursor: pointer;
+  transition: all 0.5s ease-in-out;
+}
+.nav .menu-nav_link:hover {
+  color: #ffd369;
+}
+
+.menu-nav_item:nth-child(1) {
+  transition-delay: 0.25s;
+}
+
+.menu-nav_item:nth-child(2) {
+  transition-delay: 0.35s;
+}
+
+.menu-nav_item:nth-child(3) {
+  transition-delay: 0.45s;
+}
+
+.menu-nav_item:nth-child(4) {
+  transition-delay: 0.55s;
+}
+
+.menu-nav_item:nth-child(5) {
+  transition-delay: 0.65s;
+}
+
+.menu-nav_item:nth-child(6) {
+  transition-delay: 0.75s;
+}
+
+.about {
+  padding-top: 2rem;
+  min-height: 100%;
+  width: 80%;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+}
+.about .about:first-child {
+  flex-grow: 1;
+}
+.about_bio .section-title {
+  color: #ffd369;
+}
+@media all and (min-width: 960px) {
+  .about_bio .section-title {
+    font-size: 40px;
+  }
+}
+@media all and (min-width: 760px) and (max-width: 959px) {
+  .about_bio .section-title {
+    font-size: 30px;
+  }
+}
+@media all and (min-width: 480px) and (max-width: 759px) {
+  .about_bio .section-title {
+    font-size: 26px;
+  }
+}
+@media all and (min-width: 0px) and (max-width: 479px) {
+  .about_bio .section-title {
+    font-size: 24px;
+  }
+}
+.about_bio p {
+  letter-spacing: 3px;
+  line-height: 20px;
+}
+@media all and (min-width: 960px) {
+  .about_bio p {
+    font-size: 20px;
+  }
+}
+@media all and (min-width: 760px) and (max-width: 959px) {
+  .about_bio p {
+    font-size: 18px;
+  }
+}
+@media all and (min-width: 480px) and (max-width: 759px) {
+  .about_bio p {
+    font-size: 16px;
+  }
+}
+@media all and (min-width: 0px) and (max-width: 479px) {
+  .about_bio p {
+    font-size: 14px;
+  }
+}
+.about_bio li {
+  padding: 5px 0;
+  line-height: 25px;
+}
+.about_bio-image {
+  border-radius: 10px;
+  width: 100%;
+  background: linear-gradient(to left, rgba(1, 86, 104, 0.5), rgba(1, 86, 104, 0.1));
+  background-size: cover;
+}
+.about_bio-lightBox {
+  margin-top: 20px;
+  text-decoration: none;
+  cursor: pointer;
+  font-size: 8px;
+  padding-left: 80%;
+}
+@media all and (min-width: 960px) {
+  .about_bio-lightBox {
+    font-size: 14px;
+  }
+}
+@media all and (min-width: 760px) and (max-width: 959px) {
+  .about_bio-lightBox {
+    font-size: 14px;
+  }
+}
+@media all and (min-width: 480px) and (max-width: 759px) {
+  .about_bio-lightBox {
+    font-size: 14px;
+  }
+}
+@media all and (min-width: 0px) and (max-width: 479px) {
+  .about_bio-lightBox {
+    font-size: 12px;
+  }
+}
+.about_bio-lightBox:hover {
+  text-decoration: underline;
+}
+.about_bio-exp {
+  display: flex;
+}
+.about_bio-exp > .jobs_job {
+  height: 50%;
+}
+.about_bio-exp > div {
+  flex-grow: 1;
+}
+@media all and (min-width: 960px) {
+  .about_bio-exp > div h2 {
+    font-size: 30px;
+  }
+}
+@media all and (min-width: 760px) and (max-width: 959px) {
+  .about_bio-exp > div h2 {
+    font-size: 24px;
+  }
+}
+@media all and (min-width: 480px) and (max-width: 759px) {
+  .about_bio-exp > div h2 {
+    font-size: 20px;
+  }
+}
+@media all and (min-width: 0px) and (max-width: 479px) {
+  .about_bio-exp > div h2 {
+    font-size: 18px;
+  }
+}
+@media all and (min-width: 960px) {
+  .about_bio-exp > div h3 {
+    font-size: 26px;
+  }
+}
+@media all and (min-width: 760px) and (max-width: 959px) {
+  .about_bio-exp > div h3 {
+    font-size: 20px;
+  }
+}
+@media all and (min-width: 480px) and (max-width: 759px) {
+  .about_bio-exp > div h3 {
+    font-size: 18px;
+  }
+}
+@media all and (min-width: 0px) and (max-width: 479px) {
+  .about_bio-exp > div h3 {
+    font-size: 14px;
+  }
+}
+@media all and (min-width: 960px) {
+  .about_bio-exp > div h6 {
+    font-size: 20px;
+  }
+}
+@media all and (min-width: 760px) and (max-width: 959px) {
+  .about_bio-exp > div h6 {
+    font-size: 18px;
+  }
+}
+@media all and (min-width: 480px) and (max-width: 759px) {
+  .about_bio-exp > div h6 {
+    font-size: 16px;
+  }
+}
+@media all and (min-width: 0px) and (max-width: 479px) {
+  .about_bio-exp > div h6 {
+    font-size: 12px;
+  }
+}
+.about_bio-exp h5 {
+  padding: 5px 0;
+  line-height: 25px;
+}
+.about_bio-hide {
+  position: fixed;
+  top: -100%;
+  z-index: 2;
+  right: 0%;
+  height: 100%;
+  width: 100%;
+  background: rgba(0, 0, 0, 0.7);
+  opacity: 0;
+  transition: all 0.5s ease-in-out;
+  overflow: hidden;
+}
+.about_bio-hide-paragraph {
+  /* 設定內容的樣式及位置(白底區塊) */
+  border-radius: 5px;
+  width: 70%;
+  height: 70%;
+  background: #263f44;
+  margin: 0 auto;
+  position: absolute;
+  padding: 0 8px;
+  top: 40px;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  box-sizing: border-box;
+  overflow: scroll;
+  transition: all 0.5s ease-in-out;
+}
+.about_bio-hide-paragraph p {
+  margin-top: 20px;
+  font-size: 12px;
+  letter-spacing: 3px;
+  line-height: 16px;
+}
+
+@media all and (max-width: 799px) {
+  .skill {
+    height: 100vh;
+  }
+}
+.skill_main {
+  padding-top: 5vh;
+  margin: 0 auto;
+  width: 80%;
+  display: flex;
+  flex-direction: column;
+}
+.skill_main .section-title {
+  color: #ffd369;
+}
+@media all and (min-width: 960px) {
+  .skill_main .section-title {
+    font-size: 40px;
+  }
+}
+@media all and (min-width: 760px) and (max-width: 959px) {
+  .skill_main .section-title {
+    font-size: 30px;
+  }
+}
+@media all and (min-width: 480px) and (max-width: 759px) {
+  .skill_main .section-title {
+    font-size: 26px;
+  }
+}
+@media all and (min-width: 0px) and (max-width: 479px) {
+  .skill_main .section-title {
+    font-size: 24px;
+  }
+}
+.skill_main-wrapper {
+  margin-top: 2vh;
+  position: relative;
+  flex-grow: 1;
+  display: flex;
+  border-radius: 10px;
+  flex-direction: column;
+  width: 100%;
+  background: linear-gradient(to right, rgba(1, 86, 104, 0.8), rgba(1, 86, 104, 0.1));
+  background-size: cover;
+}
+.skill_main-wrapper > card {
+  flex-grow: 1;
+  display: flex;
+}
+.skill_main-wrapper > card .chart {
+  margin: 0 auto;
+  padding: 20px 50px;
+  width: 25%;
+}
+.skill_main-wrapper > card .chart h4 {
+  white-space: nowrap;
+  margin-bottom: 30px;
+}
+@media all and (min-width: 960px) {
+  .skill_main-wrapper > card .chart h4 {
+    font-size: 30px;
+  }
+}
+@media all and (min-width: 760px) and (max-width: 959px) {
+  .skill_main-wrapper > card .chart h4 {
+    font-size: 26px;
+  }
+}
+@media all and (min-width: 480px) and (max-width: 759px) {
+  .skill_main-wrapper > card .chart h4 {
+    font-size: 22px;
+  }
+}
+@media all and (min-width: 0px) and (max-width: 479px) {
+  .skill_main-wrapper > card .chart h4 {
+    font-size: 18px;
+  }
+}
+.skill_main-wrapper > card .chart path.color0 {
+  fill: #ffd369;
+}
+.skill_main-wrapper > card .chart path.color1 {
+  fill: #015668;
+}
+.skill_main-wrapper > card .chart text {
+  font-family: sans-serif;
+  line-height: 16rem;
+  fill: #fff;
+}
+.skill_main-wrapper .skill-point {
+  font-size: 60px;
+  font-weight: lighter;
+}
+.skill_main-wrapper .skill-category {
+  display: flex;
+  flex-wrap: wrap;
+  list-style: none;
+  position: absolute;
+  height: 10vh;
+  width: 100%;
+  cursor: pointer;
+  top: 90%;
+  left: 4vw;
+}
+.skill_main-wrapper .skill-category li {
+  z-index: 2;
+  width: 25%;
+}
+@media all and (min-width: 960px) {
+  .skill_main-wrapper .skill-category li {
+    font-size: 20px;
+  }
+}
+@media all and (min-width: 760px) and (max-width: 959px) {
+  .skill_main-wrapper .skill-category li {
+    font-size: 18px;
+  }
+}
+@media all and (min-width: 480px) and (max-width: 759px) {
+  .skill_main-wrapper .skill-category li {
+    font-size: 14px;
+  }
+}
+@media all and (min-width: 0px) and (max-width: 479px) {
+  .skill_main-wrapper .skill-category li {
+    font-size: 12px;
+  }
+}
+
+#chart-container {
+  padding: 25px;
+}
+#chart-container .skill_check {
+  font-size: 30px;
+  text-align: center;
+  font-weight: lighter;
+}
+#chart-container .shadow {
+  filter: drop-shadow(0px 3px 3px rgba(0, 0, 0, 0.5));
+  flex-grow: 1;
+  padding-top: 10vh;
+  margin: 0 auto;
+}
+@media all and (min-width: 800px) {
+  #chart-container .shadow {
+    display: none;
+  }
+}
+#chart-container .shadow path {
+  transition: all 0.5s ease-in-out;
+  cursor: pointer;
+}
+
+.project {
+  position: relative;
+}
+.project_lightBox {
+  bottom: -100%;
+  background: rgba(0, 0, 0, 0.6);
+  height: 100%;
+  width: 100%;
+  left: 0;
+  position: fixed;
+  z-index: 2;
+  transition: all 0.5s ease-in-out;
+}
+.project_lightBox-close {
+  z-index: 3;
+  position: absolute;
+  left: 1rem;
+  top: 1rem;
+  cursor: pointer;
+}
+.project_lightBox-close .fa-times {
+  font-size: 30px;
+}
+.project_lightBox .slide-container {
+  position: absolute;
+  left: 0px;
+  transition: 0.8s;
+  display: flex;
+  list-style: none;
+  /* 加上 transition變換動畫*/
+}
+@media all and (min-width: 960px) {
+  .project_lightBox .slide-container {
+    top: 20vh;
+  }
+}
+@media all and (min-width: 760px) and (max-width: 959px) {
+  .project_lightBox .slide-container {
+    top: 22vh;
+  }
+}
+@media all and (min-width: 480px) and (max-width: 759px) {
+  .project_lightBox .slide-container {
+    top: 25vh;
+  }
+}
+@media all and (min-width: 0px) and (max-width: 479px) {
+  .project_lightBox .slide-container {
+    top: 28vh;
+  }
+}
+.project_lightBox .slide-container li {
+  max-height: 400px;
+  flex: 1 0 0;
+  /* flex grow shrink width */
+}
+.project_lightBox .slide-container li img {
+  width: 100%;
+  height: 100%;
+  -o-object-fit: contain;
+     object-fit: contain;
+  /* 內容物根據父層來撐起 必須先下 width: 100%;
+    height: 100%;*/
+}
+.project_lightBox .slide-dot {
+  width: 100%;
+  position: absolute;
+  display: flex;
+  list-style: none;
+  margin-right: 0px;
+  justify-content: center;
+}
+@media all and (min-width: 960px) {
+  .project_lightBox .slide-dot {
+    bottom: 4vw;
+  }
+}
+@media all and (min-width: 760px) and (max-width: 959px) {
+  .project_lightBox .slide-dot {
+    bottom: 10vw;
+  }
+}
+@media all and (min-width: 480px) and (max-width: 759px) {
+  .project_lightBox .slide-dot {
+    bottom: 30vw;
+  }
+}
+@media all and (min-width: 0px) and (max-width: 479px) {
+  .project_lightBox .slide-dot {
+    bottom: 40vh;
+  }
+}
+.project_lightBox .slide-dot li {
+  height: 8px;
+  border: 1px solid white;
+  transition: 0.2s;
+}
+@media all and (min-width: 960px) {
+  .project_lightBox .slide-dot li {
+    width: 4vw;
+    margin: 2vw;
+  }
+}
+@media all and (min-width: 760px) and (max-width: 959px) {
+  .project_lightBox .slide-dot li {
+    width: 10vw;
+    margin: 4vw;
+  }
+}
+@media all and (min-width: 480px) and (max-width: 759px) {
+  .project_lightBox .slide-dot li {
+    width: 15vw;
+    margin: 6vw;
+  }
+}
+@media all and (min-width: 0px) and (max-width: 479px) {
+  .project_lightBox .slide-dot li {
+    width: 16vw;
+    margin: 2vh;
+  }
+}
+.project_lightBox .arrow-btn {
+  width: 30px;
+  position: absolute;
+  height: 100%;
+  top: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 2;
+}
+.project_lightBox .prev-arrow {
+  left: 2vw;
+}
+@media all and (min-width: 480px) and (max-width: 759px) {
+  .project_lightBox .prev-arrow {
+    display: none;
+  }
+}
+@media all and (min-width: 0px) and (max-width: 479px) {
+  .project_lightBox .prev-arrow {
+    display: none;
+  }
+}
+.project_lightBox .next-arrow {
+  right: 2vw;
+}
+@media all and (min-width: 480px) and (max-width: 759px) {
+  .project_lightBox .next-arrow {
+    display: none;
+  }
+}
+@media all and (min-width: 0px) and (max-width: 479px) {
+  .project_lightBox .next-arrow {
+    display: none;
+  }
+}
+.project_lightBox i {
+  font-size: 28px;
+  transition: 0.3s;
+  color: rgba(255, 255, 255, 0.3);
+}
+.project_lightBox i:hover {
+  color: rgb(255, 255, 255);
+}
+.project_main {
+  padding-top: 5vh;
+  margin: 0 auto;
+  width: 80%;
+  display: flex;
+  flex-direction: column;
+}
+.project_main .section-title {
+  color: #ffd369;
+}
+@media all and (min-width: 960px) {
+  .project_main .section-title {
+    font-size: 40px;
+  }
+}
+@media all and (min-width: 760px) and (max-width: 959px) {
+  .project_main .section-title {
+    font-size: 30px;
+  }
+}
+@media all and (min-width: 480px) and (max-width: 759px) {
+  .project_main .section-title {
+    font-size: 26px;
+  }
+}
+@media all and (min-width: 0px) and (max-width: 479px) {
+  .project_main .section-title {
+    font-size: 24px;
+  }
+}
+.project_main-wrapper {
+  margin-top: 2vh;
+  border-radius: 10px;
+  background: linear-gradient(to left, rgba(1, 86, 104, 0.8), rgba(1, 86, 104, 0.1));
+  background-size: cover;
+  flex-grow: 1;
+  display: flex;
+}
+@media all and (max-width: 800px) {
+  .project_main-wrapper {
+    flex-direction: column;
+  }
+}
+.project_main-wrapper > card {
+  flex-grow: 1;
+  padding: 2vw;
+}
+.project_main-wrapper > card .hovercell {
+  border-radius: 8px;
+  height: 60%;
+  width: 100%;
+  padding: 10px;
+  position: relative;
+  background-color: black;
+  overflow: hidden;
+  margin-bottom: 2vh;
+  cursor: pointer;
+}
+.project_main-wrapper > card .hovercell .image-layer {
+  position: absolute;
+  display: block;
+  background-size: cover;
+  background-position: center;
+  width: 100%;
+  height: 100%;
+  transform: scale(1.5);
+  transition: all 0.4s cubic-bezier(0.75, 0.25, 0.15, 0.49);
+}
+.project_main-wrapper > card .hovercell .image-layer.one {
+  background-image: url(/img/享烘homePage.jpg);
+}
+.project_main-wrapper > card .hovercell .image-layer.two {
+  background-image: url(/img/bake_time_homePage.jpg);
+}
+.project_main-wrapper > card .hovercell .text-layer {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  font-weight: 500;
+  top: 10%;
+  left: 0%;
+  text-align: center;
+  color: #fff;
+  text-shadow: 2px 2px 2px rgba(0, 0, 0, 0.5);
+}
+.project_main-wrapper > card .hovercell .text-layer h4 {
+  color: #ffd369;
+  font-weight: lighter;
+  padding-top: 20%;
+  margin-bottom: 1rem;
+  transform: scale(1);
+  transition: all 0.3s cubic-bezier(0.75, 0.25, 0.15, 0.49);
+}
+@media all and (min-width: 960px) {
+  .project_main-wrapper > card .hovercell .text-layer h4 {
+    font-size: 40px;
+  }
+}
+@media all and (min-width: 760px) and (max-width: 959px) {
+  .project_main-wrapper > card .hovercell .text-layer h4 {
+    font-size: 30px;
+  }
+}
+@media all and (min-width: 480px) and (max-width: 759px) {
+  .project_main-wrapper > card .hovercell .text-layer h4 {
+    font-size: 26px;
+  }
+}
+@media all and (min-width: 0px) and (max-width: 479px) {
+  .project_main-wrapper > card .hovercell .text-layer h4 {
+    font-size: 24px;
+  }
+}
+.project_main-wrapper > card .hovercell .text-layer .small-text {
+  font-size: 1rem;
+  width: 50%;
+  margin: 0 auto;
+  transform: scale(2);
+  opacity: 0;
+  transition: all 0.4s cubic-bezier(0.75, 0.25, 0.15, 0.49);
+}
+.project_main-wrapper > card .hovercell:hover .image-layer {
+  transform: scale(1.2);
+  opacity: 0.3;
+}
+.project_main-wrapper > card .hovercell:hover h4 {
+  transform: scale(1.4) translateY(-2rem);
+}
+.project_main-wrapper > card .hovercell:hover .small-text {
+  opacity: 1;
+  transform: scale(1) translateY(-1rem);
+}
+@media all and (min-width: 960px) {
+  .project_main-wrapper > card > .card-body h5 {
+    line-height: 30px;
+  }
+}
+@media all and (min-width: 760px) and (max-width: 959px) {
+  .project_main-wrapper > card > .card-body h5 {
+    line-height: 28px;
+  }
+}
+@media all and (min-width: 480px) and (max-width: 759px) {
+  .project_main-wrapper > card > .card-body h5 {
+    line-height: 24px;
+  }
+}
+@media all and (min-width: 0px) and (max-width: 479px) {
+  .project_main-wrapper > card > .card-body h5 {
+    line-height: 20px;
+  }
+}
+@media all and (min-width: 960px) {
+  .project_main-wrapper > card > .card-body h5 {
+    font-size: 22px;
+  }
+}
+@media all and (min-width: 760px) and (max-width: 959px) {
+  .project_main-wrapper > card > .card-body h5 {
+    font-size: 20px;
+  }
+}
+@media all and (min-width: 480px) and (max-width: 759px) {
+  .project_main-wrapper > card > .card-body h5 {
+    font-size: 18px;
+  }
+}
+@media all and (min-width: 0px) and (max-width: 479px) {
+  .project_main-wrapper > card > .card-body h5 {
+    font-size: 16px;
+  }
+}
+.project_main-wrapper > card > .card-body p:first-of-type {
+  height: auto;
+}
+@media all and (min-width: 800px) {
+  .project_main-wrapper > card > .card-body p:first-of-type {
+    height: 50px;
+  }
+}
+@media all and (min-width: 960px) {
+  .project_main-wrapper > card > .card-body p {
+    line-height: 24px;
+  }
+}
+@media all and (min-width: 760px) and (max-width: 959px) {
+  .project_main-wrapper > card > .card-body p {
+    line-height: 20px;
+  }
+}
+@media all and (min-width: 480px) and (max-width: 759px) {
+  .project_main-wrapper > card > .card-body p {
+    line-height: 18px;
+  }
+}
+@media all and (min-width: 0px) and (max-width: 479px) {
+  .project_main-wrapper > card > .card-body p {
+    line-height: 14px;
+  }
+}
+@media all and (min-width: 960px) {
+  .project_main-wrapper > card > .card-body p {
+    font-size: 18px;
+  }
+}
+@media all and (min-width: 760px) and (max-width: 959px) {
+  .project_main-wrapper > card > .card-body p {
+    font-size: 18px;
+  }
+}
+@media all and (min-width: 480px) and (max-width: 759px) {
+  .project_main-wrapper > card > .card-body p {
+    font-size: 16px;
+  }
+}
+@media all and (min-width: 0px) and (max-width: 479px) {
+  .project_main-wrapper > card > .card-body p {
+    font-size: 12px;
+  }
+}
+.project_main-wrapper > card > .card-body a {
+  padding: 1px 3px;
+  box-sizing: border-box;
+  border-radius: 10px;
+  background-color: #dda52d;
+  opacity: 0.8;
+  transition: all 0.5s ease-in-out;
+}
+@media all and (min-width: 960px) {
+  .project_main-wrapper > card > .card-body a {
+    line-height: 22px;
+  }
+}
+@media all and (min-width: 760px) and (max-width: 959px) {
+  .project_main-wrapper > card > .card-body a {
+    line-height: 20px;
+  }
+}
+@media all and (min-width: 480px) and (max-width: 759px) {
+  .project_main-wrapper > card > .card-body a {
+    line-height: 16px;
+  }
+}
+@media all and (min-width: 0px) and (max-width: 479px) {
+  .project_main-wrapper > card > .card-body a {
+    line-height: 14px;
+  }
+}
+@media all and (min-width: 960px) {
+  .project_main-wrapper > card > .card-body a {
+    font-size: 14px;
+  }
+}
+@media all and (min-width: 760px) and (max-width: 959px) {
+  .project_main-wrapper > card > .card-body a {
+    font-size: 12px;
+  }
+}
+@media all and (min-width: 480px) and (max-width: 759px) {
+  .project_main-wrapper > card > .card-body a {
+    font-size: 10px;
+  }
+}
+@media all and (min-width: 0px) and (max-width: 479px) {
+  .project_main-wrapper > card > .card-body a {
+    font-size: 8px;
+  }
+}
+.project_main-wrapper > card > .card-body a:hover {
+  background-color: #e98b2a;
+  opacity: 1;
+}
+
+.contact {
+  height: 100vh;
+}
+.contact_main {
+  padding-top: 5vh;
+  margin: 0 auto;
+  width: 80%;
+  display: flex;
+  flex-direction: column;
+}
+.contact_main .section-title {
+  color: #ffd369;
+}
+@media all and (min-width: 960px) {
+  .contact_main .section-title {
+    font-size: 40px;
+  }
+}
+@media all and (min-width: 760px) and (max-width: 959px) {
+  .contact_main .section-title {
+    font-size: 30px;
+  }
+}
+@media all and (min-width: 480px) and (max-width: 759px) {
+  .contact_main .section-title {
+    font-size: 26px;
+  }
+}
+@media all and (min-width: 0px) and (max-width: 479px) {
+  .contact_main .section-title {
+    font-size: 24px;
+  }
+}
+.contact_main-wrapper {
+  margin-top: 2vh;
+  position: relative;
+  flex-grow: 1;
+  display: flex;
+  border-radius: 10px;
+  flex-direction: column;
+  width: 100%;
+  background: linear-gradient(to right, rgba(1, 86, 104, 0.8), rgba(1, 86, 104, 0.1));
+  background-size: cover;
+}
+.contact_main-wrapper > .container {
+  display: flex;
+  width: 100%;
+  padding: 10px 15px;
+  height: 100%;
+}
+.contact_main-wrapper > .container .left {
+  width: 30%;
+  background-color: #fff;
+  border-radius: 5px;
+  display: flex;
+  transition: all 0.5s ease-in-out;
+  flex-direction: column;
+}
+@media all and (max-width: 1300px) {
+  .contact_main-wrapper > .container .left {
+    display: none;
+  }
+}
+.contact_main-wrapper > .container .left .upper {
+  height: 50%;
+  width: 100%;
+  position: relative;
+  border-bottom: 10px solid #015668;
+}
+@media all and (max-width: 1300px) {
+  .contact_main-wrapper > .container .left .upper {
+    display: none;
+  }
+}
+.contact_main-wrapper > .container .left .upper figure {
+  position: absolute;
+  overflow: hidden;
+  top: calc(50% - 75px);
+  right: calc(50% - 75px);
+  height: 150px;
+  width: 150px;
+  border-radius: 50%;
+}
+.contact_main-wrapper > .container .left .upper figure img {
+  -o-object-fit: cover;
+     object-fit: cover;
+  width: 100%;
+  height: 100%;
+}
+.contact_main-wrapper > .container .left .lower {
+  width: 100%;
+  flex-grow: 1;
+  display: flex;
+}
+@media all and (max-width: 1300px) {
+  .contact_main-wrapper > .container .left .lower {
+    display: none;
+  }
+}
+.contact_main-wrapper > .container .left .lower p {
+  height: 60%;
+  width: 80%;
+  text-align: center;
+  justify-content: center;
+  align-self: center;
+  color: #000;
+  line-height: 2rem;
+  font-size: 1.5rem;
+  flex-grow: 1;
+}
+.contact_main-wrapper > .container .right {
+  padding-left: 10px;
+  flex-grow: 1;
+  display: flex;
+  flex-wrap: wrap;
+}
+.contact_main-wrapper > .container .right > .contact_card {
+  width: 50%;
+  perspective: 1000px;
+}
+@media all and (max-width: 600px) {
+  .contact_main-wrapper > .container .right > .contact_card {
+    width: 100%;
+  }
+}
+.contact_main-wrapper > .container .right > .contact_card:hover .contact_card-wrapper {
+  transform: rotateY(180deg);
+}
+.contact_main-wrapper > .container .right > .contact_card .contact_card-wrapper {
+  box-sizing: border-box;
+  transition: all 0.5s ease-in-out;
+  transform-style: preserve-3d;
+  position: relative;
+  width: 100%;
+  height: 100%;
+}
+.contact_main-wrapper > .container .right > .contact_card .contact_card-wrapper > div {
+  border-radius: 5px;
+  box-shadow: 3px 3px 0 5px rgba(1, 86, 104, 0.4);
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  width: 100%;
+  height: 100%;
+  -webkit-backface-visibility: hidden;
+          backface-visibility: hidden;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+@media all and (min-width: 960px) {
+  .contact_main-wrapper > .container .right > .contact_card .contact_card-wrapper > div p {
+    font-size: 25px;
+  }
+}
+@media all and (min-width: 760px) and (max-width: 959px) {
+  .contact_main-wrapper > .container .right > .contact_card .contact_card-wrapper > div p {
+    font-size: 18px;
+  }
+}
+@media all and (min-width: 480px) and (max-width: 759px) {
+  .contact_main-wrapper > .container .right > .contact_card .contact_card-wrapper > div p {
+    font-size: 16px;
+  }
+}
+@media all and (min-width: 0px) and (max-width: 479px) {
+  .contact_main-wrapper > .container .right > .contact_card .contact_card-wrapper > div p {
+    font-size: 18px;
+  }
+}
+.contact_main-wrapper > .container .right > .contact_card .contact_card-wrapper > div i {
+  font-size: 50px;
+  position: absolute;
+  top: calc(50% - 25px);
+  right: calc(50% - 25px);
+  color: #fff;
+}
+.contact_main-wrapper > .container .right > .contact_card .contact_card-wrapper .back {
+  position: absolute;
+  transform: rotateY(180deg);
+}
+.contact_main-wrapper > .container .right > .contact_card .contact_card-wrapper .first {
+  background-color: #ecb88a;
+}
+.contact_main-wrapper > .container .right > .contact_card .contact_card-wrapper .second {
+  background-color: #cb4042;
+}
+.contact_main-wrapper > .container .right > .contact_card .contact_card-wrapper .third {
+  background-color: #734338;
+}
+.contact_main-wrapper > .container .right > .contact_card .contact_card-wrapper .fourth {
+  background-color: #e98b2a;
+}
+
+body {
+  background: #263f44;
+  color: #fff;
+  height: 100vh;
+  font-family: "Open Sans", sans-serif, "Segoe UI", Tahoma, Geneva, Verdana, "微軟正黑體";
+  line-height: 1;
+}
+
+h1,
+h2,
+h3 {
+  font-weight: 400;
+}
+
+a {
+  color: #fff;
+  text-decoration: none;
+}
+
+.text-secondary {
+  color: #ffd369;
+}
+
+section {
+  min-height: 100vh;
+  width: 100%;
+}
+
+header {
+  position: fixed;
+  z-index: 2;
+  width: 100%;
+  padding: 1rem;
+}
+
+main {
+  height: 100%;
+  width: 100%;
+}
+main .social-icons {
+  position: fixed;
+  bottom: 1rem;
+  left: 1rem;
+}
+main .social-icons a {
+  padding: 0.4rem;
+  transition: all 0.5s ease-in-out;
+}
+main .social-icons a:hover {
+  color: #ffd369;
+}
+
+.text-secondary {
+  color: #ffd369;
+}
+
+::-webkit-scrollbar {
+  display: none;
+}
+
+li {
+  list-style: none;
+}/*# sourceMappingURL=style.css.map */

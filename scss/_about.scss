@@ -29,6 +29,10 @@
         $sectionParagraphSizePhone
       );
     }
+    li {
+      padding: 5px 0;
+      line-height: 25px;
+    }
     &-image {
       border-radius: 10px;
       width: 100%;
@@ -69,6 +73,10 @@
         h6 {
           @include responsive-fontSize(20px, 18px, 16px, 12px);
         }
+      }
+      h5 {
+        padding: 5px 0;
+        line-height: 25px;
       }
     }
     &-hide {
